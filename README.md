@@ -11,27 +11,26 @@ Capítulo Cero: Guía rápida
 ¡Que se hagan las visuales!
 Bienvenido al ETC Television Center (o ETC para los amigos). El tiempo es dinero así que empecemos rápidamente...
 
-
 Manifiesto del paquete
 Junto con esta tarjeta, hay dos items en la caja que acabas de abrir.
 
-Tu ETC. También observa que hay una pequeña memoria USB blanca enchufada en el lado derecho de la unidad. Esta memoria contiene los modos que el ETC usará para dibujar sus imágenes.
+Tu ETC. Observa también que hay una pequeña memoria USB blanca enchufada en el lado derecho de la unidad. Esta memoria contiene los modos que el ETC usará para dibujar sus imágenes.
 
-Su fuente de poder. Aunque la fuente de poder posee un enchufe apto para el mercado norteamericano, funciona con voltajes de entrada entre 100 y 240VAC a 50/60 Hz. Puede ser que necesites un adaptador para el enchufe.
+Su fuente de poder. Aunque la fuente de poder posee un enchufe adecuado para el mercado norteamericano, funciona con voltajes de entrada entre 100 y 240VAC y a 50/60 Hz. Puede pasar que necesites un adaptador para el enchufe.
 
 Puesta en marcha
 
-Sigue estos pasos para hacer visual tu sonido.
+Sigue estos pasos para visualizar tu sonido.
 
 Conecta el puerto HDMI Out (salida HDMI) a un monitor HDMI®.
 
 Conecta la fuente de poder a una toma de corriente, y luego conecta el otro extremo al puerto de energía 9VDC, el puerto más a la izquierda de la parte trasera del ETC. El status LED (LED de estado) de la fila superior indica el progreso, una luz azul cuando el ETC está inicializando, y luego blanca cuando está operacional. Tu monitor conectado también mostrará el proceso de inicialización.
 
-Presiona el botón On Screen Display (muestra en pantalla) de la fila superior
+En la fila superior, presiona el botón On Screen Display (muestra en pantalla), cuyo ícono sugiere una pantalla con letras en la parte inferior. Tu monitor debería ahora mostrar la información actual del sistema. Puedes presionar el botón una vez más para quitar esta información.
 
-Press the top row’s On Screen Display button (its icon suggests a screen with writing on the bottom). Your monitor should now show an overlay of current system information. You can press the button once more to toggle off this display.
-To transmute audio to video, connect a 1/4" audio cable to the Audio In port, and turn up the top row’s Audio Input Gain knob. (Feel free to crank it; you won’t hurt ETC’s ears.) As long as an audio signal is coming in, you should start getting pictures on your HDMI display.
-When you have had enough fun for now, press the Shutdown button on the top left of ETC. After holding it down for a couple seconds, the Status LED will glow pink while the device shuts itself down. Once the Status LED is off, it is safe to unplug the power supply.
+Para transmutar audio en video, conecta un cable de audio de 1/4" al puerto Audio In (entrada de audio), y sube la perilla Audio Input Gain (ganancia de entrada de audio) de la fila superior. Siéntete libre de aumentar la perilla hasta el máximo; no le harás daño a los oídos del ETC. Mientras haya una señal de audio entrando, deberías empezar a obtener imágenes en tu pantalla HDMI.
+
+Cuando hayas tenido suficiente diversión por el momento, presiona el botón Shutdown (apagar) en la parte superior izquierda del ETC. Después de mantenerlo presionado por un par de segundos, el Status LED será de color rosado mientras el dispositivo se está apagando. Una vez que el Status LED esté apagado, es seguro desenchufar la fuente de poder.
 
 Capítulo Uno: Conceptos de ETC
 
