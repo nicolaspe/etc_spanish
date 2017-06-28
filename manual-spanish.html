@@ -130,8 +130,6 @@
     <div class="w3-row w3-padding-64">
       <div class="w3-container">
 
-
-
         <p style="font-size: 5em;">ETC</p>
         <p>Manual de usuario del ETC Television Center</p>
         <p>Este manual fue escrito por Dave Linnenbank.</p>
@@ -236,42 +234,43 @@
 
         <p>Un <strong>modo</strong> del ETC es un m&eacute;todo para crear visuales. En t&eacute;rminos de audio, puedes pensar que cada <em>modo</em> es un <em>patch</em>. El modo puede ser cambiado de forma inst&aacute;ntanea desde el panel frontal. Cada modo disponible se encuentra en la memoria USB insertada, junto conlos archivo de apoyo que sean necesarios.</p>
 
-        <p>In building the initial factory modes, we have considered modes as falling into two broad categories:</p>
-
-        HEREIAM
+        <p>Al construir los modos de f&aacute;brica iniciales, hemos considerado que los modos caen dentro de dos categor&iacute;as amplias:</p>
 
         <ul>
-          <li>A <em>scope mode</em> directly visualizes the incoming audio signal. This could take the form of a classic “oscilloscope” signal representation or something far different. Either way, animation is continuously updated with the received audio.</li>
-          <li>A <em>trigger mode</em> also visualizes the incoming audio signal, but it doesn’t draw continually as an oscilloscope mode would. Instead, if the audio input’s volume crosses a certain threshold (for example, imagine a snare drum popping), it will trigger a visual. Other events, such as MIDI notes or clocking messages, may trigger visualizations as well. And you can always press the <em>Trigger</em> button to generate a trigger too.</li>
+          <li>Un <em>scope mode</em> ("modo visor") visualiza directamente la se&ntilde;al de audio entrante. Esto puede tomar la forma de una representaci&oacute;n de se&ntilde;al cl&aacute;sica tipo osciloscopio o algo muy diferente. De cualquier forma, la animaci&oacute;n es constantemente actualizada seg&uacute;n el audio recibido.</li>
+          <li>Un <em>trigger mode</em> ("modo gatillo") tambi&eacute;n visualiza la se&ntilde;al de audio entrante, pero no dibuja de forma continua como lo har&iacute;a un osciloscopio. En vez de esto, si la se&ntilde;al de audio entrante cruza un cierto umbral (por ejemplo, un tambor fuerte), se gatillar&aacute; una visual. Otros eventos, como notas MIDI o mensajes de reloj, tambi&eacute;n pueden gatillar visuales. Adem&aacute;s siempre puedes presionar el bot&oacute;n <em>Trigger</em> ("gatillo") para generar una nueva visual.</li>
         </ul>
 
-        <p>To make things easy to read, a factory mode whose name start with <code>S - </code> is scope mode, and one beginning with <code>T - </code> is a trigger mode. But as the descriptions above suggest, there is plenty of wiggle room as modes can readily blend these ideas or go off in completely new directions. Thinking in the scope/trigger paradigm to start is a good way to both help you understand the factory modes and organize your own ideas for new modes or new even categories.</p>
+        <p>Para facilitar la lectura, un modo de f&aacute;brica cuyo nombre empiece con <code>S - </code> es un modo tipo <em>scope</em> ("visor"), y uno que empiece con <code>T - </code> es un modo tipo <em>trigger</em> ("gatillo"). Pero como las descripciones arriba lo sugieren, existe mucho espacio intermedio ya que los modos pueden f&aacute;cilmente mezclar estas ideas o incursionar en direcciones completamente nuevas. Pensar inicialmente en el paradigma visor/gatillo es una buena manera tanto de ayudarte a entender los modos de f&aacute;brica como para ordenar tus propias ideas sobre nuevos modos e incluso nuevas categor&iacute;as.</p>
 
-        <p>As for the controls of ETC, we think of them as falling into a couple of categories.</p>
+        <p>Con respecto a los controles de ETC, podemos agruparlos en un par de categor&iacute;as.</p>
 
         <ul>
-          <li><strong>Foreground controls</strong> change parameters of the local mode. Consisting of the four numbered knobs on the front panel, these controls affect settings defined within the currently loaded mode.</li>
-          <li><strong>Background controls</strong> set global parameters. These include the <em>Background Color</em> knob and the <em>Auto Clear Toggle</em>. Even when you change modes, these parameters are persistent.</li>
+          <li>Los controles de primer plano (<strong>foreground controls</strong>) cambian par&aacute;metros del modo local. Consisten en las cuatro perillas numeradas del panel frontal, que controlan configuraciones que afectan al modo cargado actual.</li>
+          <li> Los controles de segundo plano o fondo (<strong>background controls</strong>) definen par&aacute;metros globales. Estos incluyen la perilla <em>Background Color</em> ("color de fondo") y el bot&oacute;n <em>Auto Clear Toggle</em> () ("activar auto borrado"). Incluso cuando el modo cambia, estos par&aacute;metros son persistentes.</li>
         </ul>
 
-        <p>An ETC <strong>scene</strong> is essentially a preset. Each scene stores which mode was being used along with the values of all five knobs (including the four foreground controls and the <em>Background Color</em> knob) and whether the <em>Auto Clear Toggle</em> button is enabled or disabled.</p>
+        <p>Una <strong>escena</strong> ("scene") de ETC es esencialmente un preset. Cada escena almacena el modo en uso junto con los valores de las cinco perillas (incluyendo las cuatro de control de primer plano y la perilla de color de fondo (<em>Background Color</em>)) y si el bot&oacute;n <em>Auto Clear Toggle</em> est&aacute; activado o desactivado.</p>
 
-        <p>The next chapter will explore how to put all of these ideas into action, but understanding modes versus scenes (and foreground controls versus background controls) will let us hit the ground running.</p>
+        <p>El siguiente cap&iacute;tulo explorar&aacute; c&oacute;mo poner en acci&oacute;n todas estas ideas, y el entendimiento de la diferencia entre modos y escenas (y entre controles de primer plano y de segundo plano) nos permitir&aacute; avanzar r&aacute;pidamente.</p>
 
         <hr>
 
-        <h2 id="How_to_Use_This_Manual">How to Use This Manual</h2>
+        <h2 id="How_to_Use_This_Manual">¿C&oacute;mo usar este manual?</h2>
 
-        <p>Certain chapters (such as this one!) are relevant to everyone. But depending on how you plan to use ETC, some information may prove more valuable to you.</p>
+        <p>Algunos cap&iacute;tulos (¡como este!) son relevantes para todos. Pero dependiendo en tus planes de c&oacute;mo usar el ETC, algunas secciones pueden ser de mayor o menor utilidad para ti.
+          </p>
 
         <ul>
-          <li>Regardless of your intentions, the quick-start (chapter zero) and concepts information (chapter one) will benefit you.</li>
-          <li>For out-of-the-box usage, the information on operating the hardware (cap&iacute;tulo dos) will be a central guide, walking you through the functions of the various panel controls and ports. And the <a href="http://etctv.io/modes.html">factory modes reference</a> will walk you through the standard modes and their parameters.</li>
-          <li>If you are looking to load additional modes into ETC, then chapter three will also be useful to you. Then you can scour our <a href="http://etctv.io/modes.html">ETC modes repository</a>.</li>
-          <li>If you want to edit modes or even create some of your own, chapter four will help you prepare your work for ETC.</li>
+          <li>Sin importar tus intenciones, la gu&iacute;a rapida (cap&iacute;tulo cero) y la informaci&oacute;n sobre los conceptos (cap&iacute;tulo uno) te ser&aacute;n de utilidad.</li>
+          <li>Para el funcionamiento reci&eacute;n-fuera-de-la-caja, la informaci&oacute;n sobre la operaci&oacute;n del hardware (cap&iacute;tulo dos) ser&aacute; una gu&iacute;a central, mostr&aacute;ndote las funciones de los distintos controles en el panel y los puertos. La <a href="http://etctv.io/modes-spanish.html">referencia de modos de f&aacute;brica</a> te explicar&aacute; los modos standard y sus parametros.</li>
+          <li>Si quieres cargar modos adicionales al ETC, entonces el cap&iacute;tulo tres te ayudar&aacute;. Puedes complementarlo con nuestro <a href="http://etctv.io/modes-spanish.html">repositorio de modos ETC</a>.</li>
+          <li>Si quieres editar modos o incluso crear algunos por tu cuenta, el cap&iacute;tulo cuatro te ayudar&aacute; a acondicionar tu trabajo para su uso en el ETC.</li>
         </ul>
 
-        <p>Just realize that how you use ETC today may be very different from how you use it a week from now. This is to say feel free to skip information that isn’t of use to you today; you may find that later chapters appreciate in value over time. </p>
+        <p>Solo date cuenta que c&oacute;mo uses ETC hoy puede ser diferente a c&oacute;mo lo usar&aacute;s en una semana m&aacute;s. Esto lo decimos para que te sientas libre de saltarte secciones que no te son &uacute;tiles hoy; puede ser que algunos cap&iacute;tulos te sean valiosos en el futuro.</p>
+
+        HEREIAM
 
         <hr>
         <h1 id="Chapter_Two:_General_Operation_of_ETC">Cap&iacute;tulo dos: operaci&oacute;n general del ETC</h1>
