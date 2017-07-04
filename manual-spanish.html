@@ -194,7 +194,7 @@
 
         <p>¡S&iacute;! Una vez que el ETC est&aacute; conectado y enchufado (ver cap&iacute;tulo cero), autom&aacute;ticamente empezará a crear visuales con los modos de f&aacute;brica.</p>
 
-        <h4>¿El ETC posee distintos m&eacute;todos de creaci&aacute;n de video?</h4>
+        <h4>¿El ETC posee distintos m&eacute;todos de creaci&oacute;n de video?</h4>
 
         <p>¡S&iacute;! Puedes ir hacia adelante y atr&aacute;s a trav&eacute;s de los <em>modos</em> visuales del ETC, presionando los dos botones <em>Mode Selector</em> ("selector de modo") en la secci&oacute;n inferior izquierda del panel frontal (arriba del &iacute;cono de globo ocular). Cada patch v&aacute;lido en la memoria USB es cargado como un modo, y el contenido provisto de f&aacute;brica incluye una gran cantidad de efectos visuales &uacute;nicos.</p>
 
@@ -399,8 +399,6 @@
 
         <figure><img style="max-width:100%" src="./ETC Manual_files/ETC-row-4.jpg"></figure>
 
-        HEREIAM
-
         <p>La secci&oacute;n frontal inferior del ETC posee opciones de navegaci&oacute;n y basadas en acciones, todas asociadas a elegantes botones de arce. Revisaremos cada uno, de izquierda a derecha.</p>
 
         <p><strong>Los botones <em>Mode Selector</em> (selectores de modo)</strong> son los primeros. Este par de botones gatillo en la parte izquierda y alrededor del &iacute;cono de globo ocular te permiten retroceder (izquierda) y avanzar (derecha) a trav&eacute;s de los modos actualmente cargados en tu memoria USB.</p>
@@ -460,27 +458,29 @@
 
         <h3>Entrando y saliendo del ETC.</h3>
 
-        <p>First, we are glad you made it this far! And just in case you skipped straight to this chapter, be sure to go back and read chapter two! We are assuming that general operation of ETC is fairly clear at this point. So with that out of the way, let’s proceed.</p>
+        HEREIAM
 
-        <p>In this chapter, we are going outside of ETC itself to focus on how it interacts with the wider world. While ETC can be run successfully with its factory modes and its own on-board controls, you can definitely expand this performance device with new modes and/or additional sources of control. Here we will see ways to grow ETC’s range in each of these dimensions.</p>
+        <p>Primero, ¡estamos muy contentos que hayas llegado hasta aca! Y en caso de que hayas saltado a este capitulo, ¡asegurate de volver atras y leer el capitulo 2! Asumimos que tienes clara la operacion general del ETC hasta este punto. Habiendo dicho esto, prosigamos.</p>
 
-        <p>We will start with some basics, looking at the folder structure used by ETC’s USB drive, where your modes and screenshots all live. If you want to load additional modes or simply download your screenshots, you will need to work with the USB drive (and your own computer) to place the new modes and their support files in the right place. Second, we will look at accessing the USB drive by connecting it to your computer. And finally, we’ll look at ETC’s MIDI implementation. This will be useful if you want to connect external MIDI — including USB MIDI —&nbsp;controllers to ETC, or even if you pair ETC with an external sequencer.</p>
+        <p>En este capitulo, nos saldremos del ETC en si mismo para enforcarnos en como interactua con el resto del mundo. El ETC puede operar exitosamente con sus modos de fabrica y sus controles en el dispositivo, pero ademas puedes expandir dramaticamente este dispositivo de performance con modos nuevos y/o fuentes de control adicionales. Aqui veremos formas de expandir el rango del ETC en estas dimensiones.</p>
 
-        <p>If you are searching for additional modes of expression, you have come to the right place. Let’s make ETC that bigger boat…</p>
+        <p>Empezaremos con algunos fundamentos, revisando la estructura de carpetas usadas en la memoria USB del ETC, donde viven todos tus modos y capturas de pantalla. Si quieres cargar modos adicionales o simplemente descargar tus capturas de pantall,a necesitaras trabajar con tu memoria USB (y tu computador) para ubicar los nuevos modos y sus archivos de apoyo en el lugar correcto. Despues, veremos como acceder a la memoria USB por medio de su conexion con tu computador. Finalmente, revisaremos la implementacion MIDI del ETC. Esto sera util si quieres conectar MIDI externo - incluyendo controladores USB MIDI —&nbsp;al ETC, o incluso si conectas tu ETC con secuenciador externo.</p>
+
+        <p>Si estas buscando modos adicionales de expresion, has venido al lugar correcto. Expandamos nuestro ETC…</p>
 
         <hr>
 
         <h2 id="The_USB_Drive’s_Folder_Structure">La estructura de carpetas de la memoria USB</h2>
 
-        <p>As has been mentioned, ETC will only properly work while a USB drive is attached to it. Modes are run directly from this attached USB drive. (While not mission-critical, scenes and screenshots are also stored to this drive.) This could be the flash drive included with ETC or another USB disk that is appropriately set up. Some rules apply:</p>
+        <p>Como ha sido mencionado, el ETC solo funcionara correctamente cuando tenga conectada una memoria USB. Los modos son ejecutados directamente desde esta memoria USB conectada. (Aunque no son criticos, las escenas y las capturas de pantalla tambien estan almacenadas en esta memoria). Esta memoria puede ser la incluida con el ETC o cualquier otra memoria USB configurada correctamente. Las siguientes reglas aplican:</p>
 
         <ul>
-          <li>This USB disk should be formatted with a FAT file system, often associated with MS-DOS.</li>
-          <li>This USB drive must contain a folder called <code>Modes</code> at its top-level. (This name is case-sensitive.) All modes to be loaded must live here, as detailed below.</li>
-          <li>The top-level of the USB drive may also contain a folder called <code>Grabs</code> for housing screenshots that are taken, a file called <code>Scenes.csv</code> for recording all scenes that are stored, and a <code>MIDI-Channel.txt</code> file that sets the incoming MIDI channel that ETC listens to. If absent, these items may be automatically created when needed.</li>
+          <li>Esta memoria USB debe estar formateado con el sistema de archivos FAT, a menudo asociado con MS-DOS.</li>
+          <li>Esta memoria USB debe contener uan carpeta llamada <code>Modes</code> en su nivel superior. (Este nombre es sensible a mayusculas y minusculas.) todos los modos a ser cargados deben vivir aqui, como se detalla mas abajo.</li>
+          <li>El nivel superior de la memoria USB tambien puede contener una carpeta llamada <code>Grabs</code> para almacenar las capturas de pantalla tomadas, un archivo llamado <code>Scenes.csv</code> para almacenar todas las escenas grabadas, y un archivo <code>MIDI-Channel.txt</code> que define el canal MIDI de entrada por el que el ETC escucha. Si no estan presentes, estos items pueden ser creados de forma automatica cuando sean necesarios.</li>
         </ul>
 
-        <p>The following is an example directory listing of an ETC-ready USB drive. You can see four modes here, each with a required <code>main.py</code> file, as well as the <code>Grabs</code> folder and a <code>Scenes.csv</code> file. </p>
+        <p>El siguiente es un listado de carpetas de ejemplo de una memoria USB lista para funcionar con el ETC. Puedes ver cuatro modos aqui, cada uno con su archivo requerido <code>main.py</code>, ademas de la carpeta <code>Grabs</code> y un archivo <code>Scenes.csv</code>. </p>
 
         <pre><code>Grabs\
 	0.jpg
@@ -505,123 +505,122 @@ Modes\
 Scenes.csv
 </code></pre>
 
-        <p>A couple items worth noting here about the modes:</p>
+        <p>Un par de cosas dignas de mencionar sobre los modos:</p>
 
         <ul>
-          <li>In the four mode folders shown above, all of them have the required <code>main.py</code> file. As long as these Python script files contain the minimum requirements for an ETC mode, they will all be treated as valid modes and loaded when the device starts up. (For information on programming or editing modes, see chapter four.)</li>
-          <li>Three of these mode folders also include <code>main.pyc</code> files. These intermediary files are automatically created by the Python compiler in ETC. These files can speed up future interpretations of their script, but the PYC files are not required or needed. (The first mode listed here has no <code>main.pyc</code> file, suggesting that it is a new mode which has not yet been run by ETC.)</li>
-          <li>Other files necessary for your mode should also be included in the mode folder. This could include images, additional Python scripts, font files, or anything else that might make sense.</li>
-          <li>Also note that mode folders can also contain subfolders, which can be recognized by contained mode.</li>
+          <li>En las cuatro carpetas de modos mostradas arriba, todas tienen el archivo requerido <code>main.py</code>. Mientras estos archivos de codigo en Python contengan los requerimientos minimos de un modo de ETC, todos ellos seran tratados como modos validos y cargados cuando el dispositivo se encienda. (Para informacion sobre como programar y editar modos, revisa el capitulo cuatro).</li>
+          <li>Tres de estas carpetas de modo tambien incluyen archivos <code>main.pyc</code>. Estos archivos intermediarios son creados automaticamente por el compilador de Python en ETC. Estos archivos pueden acelerar las futuras interpretaciones del codigo, pero estos archivos PYC no son requeridos ni necesarios. (El primer modo listado no posee un archivo <code>main.pyc</code> file, lo que sugiere que es un modo nuevo que todavia no ha sido ejecutado por el ETC).</li>
+          <li>Otros archivos necesitados por tu modo tambien deberan ser incluidos en la carpeta del modo. Esto incluye imagenes, codigo en Python adicional, archivos de tipografia, y lo que sea necesario.</li>
+          <li>Tambien nota que las carpetas de modo pueden contener subcarpetas, las que pueden ser reconocidas por el modo contenedor.</li>
         </ul>
 
         <hr>
 
         <h2 id="Taking_the_USB_Drive_to_your_Computer">Llevando la memoria USB a tu computador</h2>
 
-        <p>Whether you want to load new modes, download some of your screenshots, or edit the <code>Scenes.csv</code> file or the modes themselves, any of these actions requires accessing the files on ETC’s USB drive. One way to do that is connecting the USB drive to a computer. We will discuss that here. (A second way to edit modes is with the <em>USB Wi-Fi interface</em> [a separate purchase] for wireless access. We will cover that in the chapter four.)</p>
+        <p>Ya sea si quieres cargar nuevos modos, descargar algunas de tus capturas de pantalla, o editar el archivo <code>Scenes.csv</code> o los modos en si mismos, cualquiera de estas acciones requiere acceder a los archivos de la memoria USB del ETC. Una forma de hacerlo es conectar la memoria USB a tu computador. Discutiremos eso aqui. (Una segunda forma es editar los modos con la <em>interfaz USB Wi-Fi</em> [que se puede adquirir de forma adicional] para acceso remoto (wireless). Cubriremos esto en el capitulo cuatro).</p>
 
-        <p>If the USB drive is currently connected to ETC, you must first shut down the unit by holding the <em>Shutdown</em> button for a couple seconds. You will then see the <em>Status LED</em> turn pink while the system is shutting down, and then the LED will go dim. Only when the <em>Status LED</em> has gone out is it safe to disconnect the USB drive.</p>
+        <p>Si la memoria USB se encuentra conectada al ETC, primero debes apagar la unidad presionando el boton <em>Shutdown</em> por un par de segundos. Veras que el <em>Status LED</em> se pondra rosado mientras el sistema se apaga, y luego el LED se apagara. Solo despues de que el <em>Status LED</em> se apaga, es seguro desconectar la memoria USB.</p>
 
-        <p>When using the included USB drive, be sure it is flipped the right way before connecting to your computer. The drive that comes with ETC has an extremely low profile, consisting of the bottom half of most standard USB connectors/cables. As such, it is possible to plug the drive in upside down. This is generally harmless but is better avoided.<br>Be sure that the exposed pins — I think of them as teeth —&nbsp;are facing “up,” toward wherever the top of a connected USB cable would go. (On Mac laptops, for example, the pins should face upward, toward the sky.)</p>
+        <p>Cuando se usa la memoria USB incluida, asegurate de que este orientada en la direccion correcta antes de conectarla a tu computador. La memoria que viene con el ETC tiene un perfil extremadamente bajo, consistente en la mitad inferior de la mayoria de los cables y conectores USB estandar. Por esto, es posible conectar la memoria en forma inversa. Esto generalmente no provoca danos pero es mejor prevenirlo.<br>Asegurate de que los pins expuestos - yo me los imagino como dientes —&nbsp; esten mirando hacia “arriba,” hacia donde debiera ir la parte de arriba de un cable USB. (En los computadores Mac, por ejemplo, los pins deben apuntar hacia arriba, hacia el cielo).</p>
 
-        <p>Once the drive is connected and seen by your computer, it would appear somewhat like the following.</p>
+        <p>Una vez que la memoria este conectada y sea reconocida por el computador, aparecera algo como lo siguiente..</p>
 
         <figure><img style="max-width:100%" src="./ETC Manual_files/ETC_example_filestructure.png"></figure>
 
-        <p>The top level of my USB drive, whose disk name is <code>ETC</code>, is shown above. This root-level does indeed contain the <code>Grabs</code> folder, where three screenshots have been stored. Now would be a good time to move those images to your computer for your own use.</p>
+        <p>El nivel superior de mi memoria USB, cuyo nombre de disco es <code>ETC</code>, se muestra arriba. Este nivel de inicio contiene la carpeta <code>Grabs</code>, donde se almacenaron tres capturas de pantalla. Ahora seria un buen momento para mover estas imagenes a tu computador para un uso posterior..</p>
 
-        <p>A suggestion about screenshots. While you could copy files to your computer and leave them in place on the USB drive, a better practice is to regularly remove your screenshots from the USB drive. It is easy to run out of space on the USB drive by amassing screenshots, either slowly or quickly. Instead of running low on space without realizing it, just remove these images regularly.</p>
+        <p>Una sugerencia sobre las capturas de pantalla. Aunque puedes copiar los archivos en tu computador y mantener los originales en tu memoria USB, una mejor practica es regularmente remover tus capturas de pantalla de la memoria USB. Es facil quedarse sin espacio en la memoria USB al acumular capturas de pantalla, ya sea lenta o rapidamente. En vez de ejecutar con poco espacio sin darte cuenta, es mejor remover estas imagenes de forma regular.</p>
 
-        <p>Also at the top level is the <code>Scenes.csv</code> file. This file of comma-separated values is readable if you open it in a text editor, with each line looking something like this:</p>
+        <p>En el nivel superior tambien se encuentra el archivo <code>Scenes.csv</code>. Este archivo de valores separados por coma se puede leer si lo abres en un editor de texto, donde cada linea se ve mas o menos asi:</p>
 
         <pre><code>bouncing-ball,0.0,0.2668621700879765,0.5141739980449658,0.7526881720430108,1.0,False
 </code></pre>
 
-        <p>These values represent:</p>
+        <p>Estos valores representan:</p>
 
-        <pre><code>Mode, Foreground 1 Control knob, Foreground 2 Control knob, Foreground 3 Control knob, Foreground 4 Control knob, Background Color knob, Auto Clear Toggle button
-</code></pre>
+        <pre><code>Modo, perilla de primer plano 1, perilla de primer plano 2, perilla de primer plano 3, perilla de primer plano 4, perilla de color de fondo, boton Auto Clear Toggle</code></pre>
 
-        <p>If you are brave and interested, you could try editing these scenes values or simply reordering the lines. But you might want to make a local copy of the file first, just in case. (If things get out of hand, you can always just deleted the <code>Scenes.csv</code>. When a new file is needed, ETC will create it.)</p>
+        <p>Si eres valiente y estas interesado, puedes tratar de editar estos valores de escena o simplemente reordenar estas lineas. Te recomendamos primero hacer antes una copia local de los archivos, como respaldo. (si las cosas se salen de control, siempre puedes borrar el archivo <code>Scenes.csv</code>. Cuando se necesita un nuevo archivo, ETC lo crea).</p>
 
-        <p>Inside of the top-level <code>Modes</code> folder, the four modes are selected (with blue coloration), and their contents are exposed. So in the example shown above, the four modes available on ETC would be <code>S - Circle Scope Connected</code>, <code>S - Feynman</code>, <code>T - Density Cloud</code>, and <code>T - Spanish Flash Cards</code>. And once more, the practice with factory modes is that a leading <code>S - </code> indicates a scope mode while a leading <code>T - </code> signifies a trigger mode (see chapter one).</p>
+        <p>Dentro de la carpeta <code>Modes</code> del nivel superior, se seleccionan los cuatro modos (con coloracion azul), y sus contenidos son expuestos. Entonces en el ejemplo de arriba, los cuatro modos disponibles en el ETC son <code>S - Circle Scope Connected</code>, <code>S - Feynman</code>, <code>T - Density Cloud</code>, y <code>T - Spanish Flash Cards</code>. Una vez mas, la practica con los modos de fabrica es que un modo que empiece con <code>S - </code> indica iun modo visor y uno que empieza con <code>T - </code> indica un modo gatillo (ver capitulo uno).</p>
 
-        <p>When working with these modes, you will most likely want to work with their folders rather than handling the files within each folder. For example:</p>
+        <p>Cuando estes trabajando con estos modos, lo mas probable es que quieras trabajar con sus carpetas en vez de manejar los archivos detnro de cada carpeta. Por ejemplo:</p>
 
         <ul>
-          <li><em>If you want to add a new mode to ETC,</em> make sure to copy the full folder into the USB drive’s <code>Modes</code> folder. (And if you downloaded a ZIP file, make sure that you have decompressed it to a folder before moving it to ETC’s USB drive.)</li>
-          <li><em>If you want to back a mode up,</em> copy the folder over to your computer.</li>
-          <li><em>If you want to rename a mode,</em> rename the folder.</li>
-          <li><em>If you want to duplicate a mode and make changes to the new copy,</em> duplicate the folder and name the copy something different.</li>
-          <li><em>If you want to delete a mode,</em> make sure to delete the entire mode folder.</li>
+          <li><em>Si quieres agregar un nuevo modo al ETC,</em> asegurate de copiar la carpeta completa en la carpeta <code>Modes</code> de la memoria USB. (Y si descargaste un archivo ZIP, asegurate de descomprimirlo a una carpeta antes de moverlo a la memoria USB del ETC).</li>
+          <li><em>Si quieres respaldar un modo,</em> copia la carpeta a tu computador.</li>
+          <li><em>Si quieres cambiarle el nombre a un modo,</em> cambiale el nombre a la carpeta.</li>
+          <li><em>Si quieres duplicar un modo y hacerle cambios a la copia nueva,</em> duplica la carpeta y ponle un nombre distinto a la carpeta.</li>
+          <li><em>Si quieres eliminar un modo,</em> aesgurate de borrar completamente la carpeta del modo.</li>
         </ul>
 
-        <p>In short, if you aren’t editing the files themselves, then working with the files within the mode’s folder can only cause problems.</p>
+        <p>Resumiendo, si no estas editando los archivos en si mismos, trabajar con archivos dentro de la carpeta del modo puede causar problemas.</p>
 
-        <p>Finally, note that any other folders or files located on the USB drive will likely be ignored by ETC. This means you could keep a backup folder of working modes on the USB drive while editing the “live” versions. Or this could be handy for having different “set lists” of modes or even different scene files. The set list idea would be to duplicate either your <code>Modes</code> folder or <code>Scenes.csv</code> file, and then rename the version that you would like to save for future use. Just make sure that the proper files and folders have the proper names before you hit the stage!</p>
+        <p>Finalmente, nota que cualquier otra carpeta o archivo ubicado en la memoria USB sera ignorado por el ETC. Esto significa que puedes mantener una carpeta de respaldo de modos en la memoria USB mientras editas las versiones “en vivo”, O esto puede ser util para tener distintas “presentaciones”  de modos o incluso distintos archivos de escena. La idea de presentacion podria ser duplicar o tu carpeta <code>Modes</code> o tu archivo <code>Scenes.csv</code>, y luego cambiar el nombre de la version que quieres guardar para uso futuro. !Asegurate de que los archivos apropiados tengan los nombres apropiados antes de subir al escenario!</p>
 
         <hr>
 
         <h2 id="ETC’s_MIDI_Configuration">Configuraci&oacute;n MIDI del ETC</h2>
 
-        <p>As ETC’s <code>MIDI In</code> port suggests, external MIDI controllers can be connected to it. In addition to devices connect by regular(/old-fashioned) five-pin DIN connectors, USB MIDI devices can also be used with ETC. To ensure compatibility, we suggest that you select a class compliant USB MIDI controller. Any controller that requires the installation of a driver may, at best, not work as expected.</p>
+        <p>Como lo sugiere el puerto<code>MIDI In</code> (entrada MIDI) del ETC, se pueden conectar controladores MIDI externos a el. Adicionalmente a los dispositivos con conectores regulares (/anticuados) de DIN de cinco pins, se pueden conectar dispositivos USB MIDI al ETC. Para asegurar compatibilidad, sugerimos que selecciones un controlador USB MIDI class-compliant, esto es, que no requiera instalacion de software adicional para su uso.</p>
 
-        <p>To properly interact with ETC, we need to know the MIDI implementation of this device. To begin with, ETC only listens to incoming MIDI messages that are on the specified channel (by default, MIDI channel 1). And only a small subset of MIDI messages has an actual effect on ETC’s operating modes.</p>
+        <p>Para intectuar apropiadamente con el ETC, necesitamos conocer la implementacion MIDI de este dispositivo. Para empezar, el ETC solo escucha los mensajes MIDI en el canal especificado (por defecto, el canal MIDI 1). Ademas, solo un pequeno subconjunto de mensajes MIDI tiene un efecto real en los modos de operacion del ETC.</p>
 
-        <p>In other words, your controller may send some messages that ETC doesn’t recognize, and that’s okay. These messages won’t produce any effect on ETC, but they won’t create any problems either so don’t worry with “disabling active sensing,” etc. etc.</p>
+        <p>En otras palabras, tu controlador puede enviar algunos mensajes que el ETC no reconoce, y eso no causara problemas. Estos mensajes no produciran ningun efecto en el ETC, ni tampoco ocasionaran problemas asi que no te hagas problemas en “descativar la escucha activa”, etc. etc.</p>
 
-        <p> Let’s start by examining the different type of messages that ETC uses. We will also end with a word on changing the incoming MIDI channel that ETC responds to.</p>
+        <p> Empecemos examinando los distintos tipos de mensajes que usa el ETC. Tambien terminaremos con unas palabras sobre como cambiar el canal MIDI de entrada que el ETC escucha.</p>
 
-        <h4>Control Change Messages</h4>
+        <h4>Mensajes de cambio de controlador (Control Change)</h4>
 
-        <p>Incoming control change messages using controller numbers <code>21</code> through <code>25</code> have an effect on ETC. The following knobs correspond to the listed controller number:</p>
-
-        <ul>
-          <li>Controller Number <code>21</code> &gt; <em>Foreground 1 Control</em> knob</li>
-          <li>Controller Number <code>22</code> &gt; <em>Foreground 2 Control</em> knob</li>
-          <li>Controller Number <code>23</code> &gt; <em>Foreground 3 Control</em> knob</li>
-          <li>Controller Number <code>24</code> &gt; <em>Foreground 4 Control</em> knob</li>
-          <li>Controller Number <code>25</code> &gt; <em>Background Color</em> knob</li>
-        </ul>
-
-        <p>Each incoming message’s value replaces the current value of the respective controller. So even if foreground knob 2 is turned all the way to the right, an incoming controller message of number <code>22</code> with a value <code>0</code> will change foreground controller 2’s value to zero. Once you move the <em>Foreground 2 Control</em> knob again, its control will be restored.</p>
-
-        <h4>Program Change Messages</h4>
-
-        <p>Program change messages received by ETC switch to the scene specified by the message’s value. So if a program change message with a value of <code>1</code> is received, ETC will switch to its first stored scene, and a program change message with value <code>4</code> would switch to the fourth scene, etc.</p>
-
-        <p>If no scenes are stored on ETC, then these program change messages will similarly map to the loaded modes. So a program change message with value <code>1</code> would switch to the first mode, <code>9</code> to the ninth mode, etc.</p>
-
-        <h4>Note Messages</h4>
-
-        <p>All incoming note messages (again, on the global MIDI channel) are received by ETC. It provides information on these note messages in two ways:</p>
+        <p>Los mensajes de cambio de controlador que usan numeros de controlador entre <code>21</code> y <code>25</code> hacen efecto en el ETC. Las siguientes perilllas corresopnden al numero de controlador listado:</p>
 
         <ul>
-          <li>ETC tracks all incoming note messages, keeping tabs on which pitches are on or off at any given time.</li>
-          <li>A lot like a flag on a mailbox, ETC provides a notification whenever a MIDI note on message(s) has been received since the previous video frame. This can be very handy for creating a “note trigger” effect in your modes.</li>
+          <li>Numero de controlador <code>21</code> &gt; <em>Perilla de control de primer plano 1</em></li>
+          <li>Numero de controlador <code>22</code> &gt; <em>Perilla de control de primer plano 2</li>
+          <li>Numero de controlador <code>23</code> &gt; <em>Perilla de control de primer plano 3</li>
+          <li>Numero de controlador <code>24</code> &gt; <em>Perilla de control de primer plano 4</li>
+          <li>Numero de controlador <code>25</code> &gt; <em>Perilla de color de fondo</em>(Background Color)</li>
         </ul>
 
-        <p>Any mode can use either or both of these status data.</p>
+        <p>Cada valor de mensaje entrante reemplaza el valor actual del controlador respectivo. Entonces incluso si la perilla de primer plano 2 esta lo mas a la derecha, un mensaje entrante de controlador de numero <code>22</code> con un valor <code>0</code> cambiara el valor del controlador de primer plano 2 a cero. cuando muevas de nuevo la perilla de <em>control de primer plano 2</em>, se restaurara el control.</p>
 
-        <p>Additionally, the last MIDI note (pitch <code>127</code>) is used to toggle that state of the auto clear function, acting in the same manner as each press of the <em>Auto Clear Toggle</em> button. So any note on message with pitch <code>127</code> toggles the current state (if it was on, it switches off, and vice versa).</p>
+        <h4>Mensajes de cambio de programa (Program Change)</h4>
 
-        <h4>MIDI Clock Messages</h4>
+        <p>Los mensajes de cambio de programa recibidos por el ETC cambian a la escena especificada por el valor del mensaje. Entonces, si se recibe un mensaje de cambio de programa con un valor de <code>1</code>, el ETC ira a la primera escena grabada, y un mensaje de cambio de prorgrama con valor <code>4</code> ira a la cuarta escena, etc.</p>
 
-        <p>ETC also understands a couple of MIDI system real-time messages. Many sequencers support this clocking method, but it is simple enough that you could build it into other environments as well (such as Pure Data [read: for <strong>Organelle</strong>], Max, Reaktor, etc.).</p>
+        <p>Si no hay escenas almacenadas en el ETC, entonces estos mensajes de cambio de programa se mapean a las modos cargados correspondientes. Entonces un mensaje de cambio de programa con valor <code>1</code> cargara el primer modo, <code>9</code> el noveno modo, etc.</p>
 
-        <p>MIDI’s concept for system real-time messages is that a <em>timing clock</em> message is received 24 times per quarter note for the purposes of synchronization. Accordingly, each time ETC receives a timing clock message, an internal counter is increased by one step. After the 24th step, the counter returns to its low position and counts upward again. Additionally, any real-time <em>start</em> message that is received triggers also causes the counter to be reset on the next clock beat.</p>
+        <h4>Mensajes de nota</h4>
 
-        <p>This internal counter value of ETC is accessible to any mode that wishes to use it. By using select steps of the counter, you can create effects that are rhythmically synchronized to your liking.</p>
+        <p>Todos los mensajes entrantes de nota (de nuevo, en el canal gloal de entrada MIDI) son recibidos por el ETC. Se provee informacion sobre estos mensajes de nota en dos maneras:</p>
 
-        <p>And please note that MIDI clock messages are <em>system</em> MIDI messages. That means that these messages will be received and used regardless of ETC’s current global MIDI channel.</p>
+        <ul>
+          <li>El ETC hace un seguimiento de los mensajes de nota entrantes, anotando en todo momento cuales alturas estan encendidas y apagadas.</li>
+          <li>El ETC notifica cada vez que un mensaje de encendido de nota (note on) ha sido recibido desde el cuadro de video anterior. Esto puede ser muy util para crear un efecto de "gatillo de nota" en tus modos.</li>
+        </ul>
 
-        <h4>Changing the Global MIDI Channel</h4>
+        <p>Cualquier modo puede ser uno o ambos de estos datos de estado.</p>
 
-        <p>Earlier we noted a file called <code>MIDI-Channel.txt</code>at the top level of the USB drive. This plain text file should contain only a single number. If the number is between <code>1</code> and <code>16</code>, then ETC will listen only to that specified MIDI channel for incoming MIDI messages, and all other channels will be ignored.</p>
+        <p>Adicionalmente, la ultima nota MIDI (altura <code>127</code>) es usada para alternar el estado de la funcion de auto borrado, actuando de la misma forma que el boton <em>Auto Clear Toggle</em>. Entonces, cualquier mensaje de encendido de nota con altura <code>127</code>  cambia el estado actual (si estaba encendido, lo apaga, y vice versa).</p>
 
-        <p>Setting the contents of the text file to <code>0</code> (the number zero) will switch ETC to a kind of omni mode, telling the device to ignore the MIDI channel of incoming message and to respond to everything it receives. As an example, this might be preferable if you are using a MIDI controller that has both keys and/or knobs (typically transmitted on channel 1) and drum pads (often sent on channel 10).</p>
+        <h4>Mensajes de reloj MIDI</h4>
 
-        <p>Finally, if this <code>MIDI-Channel.txt</code> file is deleted or not readable, ETC will default to MIDI channel 1 when it boots up.</p>
+        <p>El ETC tambien entiende un par de mensajes MIDI de sistema en tiempo real. Algunos secuenciadores soportan este metodo de reloj, pero es lo suficientemente simple como para ser construido en otro ambiente (como Pure Data [lease: para <strong>Organelle</strong>], Max, Reaktor, etc.).</p>
+
+        <p>El concepto MIDI de mensajes de sistema en tiempo real es que un <em>relok temporizador</em> es recibido 24 veces por nota negra para proposito de sincronizacion. De la misma forma, cada vez que el ETC recibe un mensaje de temporizado de relok, se aumenta en uno un contador interno. Despues del paso numero 24, el contador vuelve a su valor minimo y prosigue la cuenta. Adicionalmente, cualquier mensaje <em>start</em> (inicio) de tiempo real recibido, tambien gatilla que el contador sea reseteado en la siguiente pulsacion de reloj.</p>
+
+        <p>Este valor de contador interno del ETC es accesible desde cualquier modo que quiera usarlo. Al usar algunos pasos del contador, puedes crear efectos que estan ritmicamente sincronizados a tu gusto.</p>
+
+        <p>Por favor nota que los mensajes de reloj MIDI son mensajes MIDI de <em>sistema</em>. Esto signifca que estos mensajes seran recibidos y usados sin importar el actual canal global MIDI.</p>
+
+        <h4>Modificacion del canal MIDI global</h4>
+
+        <p>Previamente mencionamos un archivo llamado <code>MIDI-Channel.txt</code> en el nivel superior de la memoria USB. Este archivo de texto plano debe contener solo un numero. Si el numero esta entre <code>1</code> y <code>16</code>, el ETC solo escuchara en ese canal MIDI especificado los mensajes MIDI entrantes, y todos los otros canales seran ignorados.</p>
+
+        <p>Si se configura el archivo para que contenga un <code>0</code> (el numero cero), el ETC cambiara a modo omni, indicandole al dispositivo que que ignore el canal MIDI de mensaje entrante y que responda a todo lo que reciba. Por ejemplo, esto puede ser preferible si estas usando un controlador midi que tiene botones y/o perillas (tipicamente transmitidos en el canal 1) y pads de percusion (tipicamente transmitidos en el canal 10).</p>
+
+        <p>Finalmente, si este archivo <code>MIDI-Channel.txt</code> es borrado o no es legible, el ETC usara por defecto el canal MIDI 1 cuando se inicialice.</p>
 
         <hr>
         <h1 id="Chapter_Four:_Programming_For_ETC,_and_Access_via_Wi-Fi">Cap&iacute;tulo cuatro: programando el ETC y acceso via Wi-Fi</h1>
