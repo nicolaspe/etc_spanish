@@ -293,64 +293,62 @@
 
         <p>Cuando se conecta la fuente de poder al ETC, el sistema autom&aacute;ticamente empieza su inicializaci&oacute;n (como se describe en el cap&iacute;tulo cero). Cuando termines de usar el ETC o necesites apagarlo por un momento, mant&eacute;n presionado el bot&oacute;n <em>Shutdown</em> ("apagar") por aproximadamente dos segundos. Durante el proceso de apagado, el <em>Status LED</em> ("LED de estado") ir&aacute; de blanco a rosado, y una vez que la unidad est&eacute; lista para ser desconectada de forma segura de la fuente de poder, la luz finalmente se apagar&aacute;.</p>
 
-        HEREIAM
+        <p><strong>El <em>Status LED</em></strong> ("LED de estado") es una luz que ilumina en distintos colores para reflejar o el estado del hardware ETC, o para indicar que una acci&oacute;n en particular est&aacute; en proceso, o se ha recibido un tipo de mensaje.</p>
 
-        <p><strong>The <em>Status LED</em></strong> is a light that illuminates in various colors to reflect either the state of the ETC hardware, or to indicate that a particular action is being taken or a type of message was just received.</p>
-
-        <p>When the <em>Status LED</em> is glowing in one of these colors, it is indicating the following hardware state:</p>
+        <p>Cuando el <em>Status LED</em> est&aacute; brillando en alguno de estos colores, est&aacute; indicando el estado del hardware:</p>
 
         <ul>
-          <li>Light blue: ETC is currently starting up. (It has probably just received power.)</li>
-          <li>Red: ETC encountered an error while starting up. If you consistently receive this message, either consult our <a href="https://www.critterandguitari.com/pages/FAQ">FAQ page</a> or <a href="https://www.critterandguitari.com/pages/contact-us">contact us</a>!</li>
-          <li>White: ETC is currently running normally.</li>
-          <li>Pink: ETC is in the process of shutting down. (You likely just pressed the <em>Shutdown</em> button.)</li>
-          <li>Dim: When the LED is not illuminated, then ETC is not running. Either you haven’t powered it on yet, or you have already shut down the device.</li>
+          <li>Azul claro: el ETC se est&aacute; encendiendo. (Probablemente acaba de ser conectado a la fuente de poder.)</li>
+          <li>Rojo: el ETC tuvo un error al encenderse. Si recibes este mensaje de forma constante, consulta nuestra <a href="https://www.critterandguitari.com/pages/FAQ">p&aacute;gina de preguntas frecuentes</a> o <a href="https://www.critterandguitari.com/pages/contact-us">cont&aacute;ctanos</a>!</li>
+          <li>Blanco: el ETC est&aacute; funcionando normalmente.</li>
+          <li>Rosado: el ETC est&aacute; apag&aacute;ndose. (Probablmente presionaste el bot&oacute;n <em>Shutdown</em> (apagar).)</li>
+          <li>Apagado: cuando el LED no est&aacute; iluminado, el ETC no est&aacute; operando. O no lo has encendido, o lo has apagado.</li>
         </ul>
 
-        <p>And when the <em>Status LED</em> is showing one of these colors, it is relaying the following information:</p>
+        <p>Y cuando el <em>Status LED</em> est&aacute; mostrando uno de estos colores, est&aacute; indicando la siguiente informaci&oacute;n:</p>
 
         <ul>
-          <li>Yellow: A screenshot is being written to the USB drive. (You likely just pressed the <em>Screenshot</em> button.)</li>
-          <li>Green: When the LED flashes green, a MIDI message (such as a note or continuous controller message) was just received by ETC. When the light stays a solid green, a steady stream of MIDI messages (likely clock messages) is arriving at ETC.</li>
-          <li>Purple: A message was just received via the <code>Foot Switch</code> port.</li>
+          <li>Amarillo: se est&aacute; grabando una captura de pantalla (screenshot) en la memoria USB. (Probablemente acabas de presionar el bot&oacute;n <em>Screenshot</em>.)</li>
+          <li>Verde: cuando el LED parpadea verde, un mensaje MIDI (como una nota o un mensaje de control continuo) acaba de ser recibido por el ETC. Cuando la luz se mantiene verde, est&aacute; llegando un torrente de mensajes MIDI (probablemente mensajes de reloj) al ETC.</li>
+          <li>P&uacute;rpura: un mensaje acaba de ser recibido en el puerto <code>Foot Switch</code> (pedal).</li>
         </ul>
 
-        <p><strong>The <em>On Screen Display</em> button</strong> is a toggle that calls up an overlay of current system information.</p>
+        <p><strong>El bot&oacute;n <em>On Screen Display</em> (mostrar en pantalla)</strong> es un bot&oacute;n que activa o desactiva la muestra de la informaci&oacute;n de sistema en pantalla.</p>
 
         <figure><img style="max-width:100%" src="./ETC Manual_files/osd.png"></figure>
 
-        <p>Information is displayed in two columns. On the left side are:</p>
+        <p>La informaci&oacute;n se muestra en dos columnas. En el lado izquierdo:</p>
 
         <ul>
-          <li>The current mode.</li>
-          <li>The most recently loaded scene (if applicable).</li>
-          <li>An indicator for incoming MIDI notes.</li>
-          <li>The current positions of the background and foreground knobs.</li>
-          <li>An indicator of whether the threshold trigger is currently engaged.</li>
-          <li>A level meter for incoming audio signal.</li>
-          <li>An indicator of whether the background clearing function is currently enabled.</li>
+          <li>El modo actual.</li>
+          <li>La escena m&aacute;s recientemente cargada (si es aplicable).</li>
+          <li>Un indicador de notas MIDI entrantes.</li>
+          <li>Las posiciones actuales de las perillas de fondo y de primer plano.</li>
+          <li>Un indicador de si el gatillo de umbral est&aacute; siendo activado.</li>
+          <li>Un indicador de nivel de la se&ntilde;al de audio entrante.</li>
+          <li>Un indicador de si la funci&oacute;n de borrado de fondo est&aacute; activada.</li>
         </ul>
 
-        <p>The right column includes:</p>
+        <p>La columna derecha incluye:</p>
 
         <ul>
-          <li>Thumbnails of the several most recent screen grabs.</li>
-          <li>ETC’s current IP address, in case the USB Wi-Fi dongle is in use. (For more information, see chapter four.)</li>
-          <li>How much of ETC’s memory (RAM) is currently being used.</li>
-          <li>Any connected and recognized USB MIDI devices (if applicable).</li>
-          <li>The incoming MIDI channel that ETC is listening to.</li>
+          <li>Im&aacute;genes de las capturas de pantalla m&aacute;s recientes.</li>
+          <li>La direcci&oacute;n IP actual del ETC, en caso de que el dongle USB Wi-Fi est&eacute; en uso. (Para mas informaci&oacute;n, revisa el cap&iacute;tulo cuatro.)</li>
+          <li>Cu&aacute;nta memoria (RAM) del ETC est&aacute; siendo usada.</li>
+          <li>Cualquier dispositivo MIDI conectado y reconocido (si es aplicable).</li>
+          <li>El canal MIDI de entrada que el ETC est&aacute; escuchando.</li>
         </ul>
 
-        <p>Pressing the <em>On Screen Display</em> button a second time will toggle the display back off screen.</p>
+        <p>Presionar una segunda vez el bot&oacute;n <em>On Screen Display</em> desactivar&aacute; la muestra en pantalla de la informaci&oacute;n de sistema.</p>
 
-        <p><strong>The <em>Audio Input Gain</em> knob</strong> does nothing to affect the internal video system or change the audio that you hear, but it is probably the most consequential control for ETC. This knob scales the incoming audio level before it is processed by ETC for use in the current visual mode. The purpose of this knob is to adjust the strength of the audio signal and scale it into an appropriate range for visualization.</p>
+        <p><strong>La perilla <em>Audio Input Gain</em> (ganancia de entrada de audio)</strong> no afecta en nada el sistema de video interno ni cambia el audio que escuchas, pero es probablemente el control con mayores consecuencias del ETC. Esta perilla escala el nivel del audio entrante antes de ser procesado por el ETC para su uso en el modo visual actual. El prop&oacute;sito de esta perilla es ajustar la intensidad de la se&ntilde;al de audio y escalarla en un rango apropiado para su visualizaci&oacute;n.</p>
 
-        <p>The appropriate setting for this knob will depend on the type of signal you are connecting and the mode you are using. For example:</p>
+        <p>La configuraci&oacute;n apropiada de esta perilla depende del tipo de se&ntilde;al que est&aacute;s conectando y el modo que est&aacute;s usando. Por ejemplo:</p>
 
         <ul>
-          <li>Are you connecting a guitar or microphone directly to ETC’s <code>Audio In</code> port? Then you will probably need a higher gain setting for this relatively weak signal.</li>
-          <li>Are you connecting a powered instrument (such as a synthesizer) output, or even the full band’s output from a mixer? Then the <em>Audio Input Gain</em> knob can probably be a bit lower.</li>
-          <li>Are you doing something we can’t imagine? Good job! Adjust the gain knob until you find an appropriate setting for the modes you are using.</li>
+          <li>¿Est&aacute;s conectando una guitarra o un micr&oacute;fono de forma directa al puerto <code>Audio In</code> (entrada de audio) del ETC? Si es as&iacute;, probablemente necesitar&aacute;s configurar una ganancia alta para esta se&ntilde;al relativamente d&eacute;bil.</li>
+          <li>¿Est&aacute;s conectando un instrumento con una salida alimentada con poder (como un sintetizador), o una banda completa usando la salida de un mezclador? Si es as&iacute;, la perilla de <em>Audio Input Gain</em> probablemente puede estar configurada en un valor menor.</li>
+          <li>¿Est&aacute;s haciendo algo que no podemos imaginar? ¡Buen trabajo! Ajusta la perilla de ganancia hasta que encuentres una configuraci&oacute;n aproppiada para los modos que est&aacute;s usando.</li>
         </ul>
 
         <hr>
