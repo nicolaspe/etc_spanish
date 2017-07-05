@@ -460,27 +460,27 @@
 
         HEREIAM
 
-        <p>Primero, ¡estamos muy contentos que hayas llegado hasta aca! Y en caso de que hayas saltado a este capitulo, ¡asegurate de volver atras y leer el capitulo 2! Asumimos que tienes clara la operacion general del ETC hasta este punto. Habiendo dicho esto, prosigamos.</p>
+        <p>Primero, ¡estamos muy contentos que hayas llegado hasta ac&aacute;! Y en caso de que hayas saltado a este cap&iacute;tulo, ¡aseg&uacute;rate de volver atras y leer el cap&iacute;tulo 2! Asumimos que tienes clara la operaci&oacute;n general del ETC hasta este punto. Habiendo dicho esto, prosigamos.</p>
 
-        <p>En este capitulo, nos saldremos del ETC en si mismo para enforcarnos en como interactua con el resto del mundo. El ETC puede operar exitosamente con sus modos de fabrica y sus controles en el dispositivo, pero ademas puedes expandir dramaticamente este dispositivo de performance con modos nuevos y/o fuentes de control adicionales. Aqui veremos formas de expandir el rango del ETC en estas dimensiones.</p>
+        <p>En este cap&iacute;tulo, nos saldremos del ETC en s&iacute; mismo para enfocarnos en c&oacute;mo interact&uacute;a con el resto del mundo. El ETC puede operar exitosamente con sus modos de f&aacute;brica y sus controles en el dispositivo, pero adem&aacute;s puedes expandir dram&aacute;ticamente este dispositivo de performance con modos nuevos y/o fuentes de control adicionales. Aqu&iacute; veremos formas de expandir el rango del ETC en estas dimensiones.</p>
 
-        <p>Empezaremos con algunos fundamentos, revisando la estructura de carpetas usadas en la memoria USB del ETC, donde viven todos tus modos y capturas de pantalla. Si quieres cargar modos adicionales o simplemente descargar tus capturas de pantall,a necesitaras trabajar con tu memoria USB (y tu computador) para ubicar los nuevos modos y sus archivos de apoyo en el lugar correcto. Despues, veremos como acceder a la memoria USB por medio de su conexion con tu computador. Finalmente, revisaremos la implementacion MIDI del ETC. Esto sera util si quieres conectar MIDI externo - incluyendo controladores USB MIDI —&nbsp;al ETC, o incluso si conectas tu ETC con secuenciador externo.</p>
+        <p>Empezaremos con algunos fundamentos, revisando la estructura de carpetas usadas en la memoria USB del ETC, donde viven todos tus modos y capturas de pantalla. Si quieres cargar modos adicionales o simplemente descargar tus capturas de pantalla necesitar&aacute;s trabajar con tu memoria USB (y tu computador) para ubicar los nuevos modos y sus archivos de apoyo en el lugar correcto. Despu&eacute;s, veremos c&oacute;mo acceder a la memoria USB por medio de su conexi&oacute;n con tu computador. Finalmente, revisaremos la implementaci&oacute;n MIDI del ETC. Esto sera &uacute;til si quieres conectar MIDI externo - incluyendo controladores USB MIDI —&nbsp;al ETC, o incluso si conectas tu ETC con secuenciador externo.</p>
 
-        <p>Si estas buscando modos adicionales de expresion, has venido al lugar correcto. Expandamos nuestro ETC…</p>
+        <p>Si est&aacute;s buscando modos adicionales de expresi&oacute;n, has venido al lugar correcto. Expandamos nuestro ETC…</p>
 
         <hr>
 
         <h2 id="The_USB_Drive’s_Folder_Structure">La estructura de carpetas de la memoria USB</h2>
 
-        <p>Como ha sido mencionado, el ETC solo funcionara correctamente cuando tenga conectada una memoria USB. Los modos son ejecutados directamente desde esta memoria USB conectada. (Aunque no son criticos, las escenas y las capturas de pantalla tambien estan almacenadas en esta memoria). Esta memoria puede ser la incluida con el ETC o cualquier otra memoria USB configurada correctamente. Las siguientes reglas aplican:</p>
+        <p>Como ha sido mencionado, el ETC solo funcionar&aacute; correctamente cuando tenga conectada una memoria USB. Los modos son ejecutados directamente desde esta memoria USB conectada. (Aunque no son cr&iacute;ticos, las escenas y las capturas de pantalla tambi&eacute;n est&aacute;n almacenadas en esta memoria). Esta memoria puede ser la incluida con el ETC o cualquier otra memoria USB configurada correctamente. Las siguientes reglas aplican:</p>
 
         <ul>
-          <li>Esta memoria USB debe estar formateado con el sistema de archivos FAT, a menudo asociado con MS-DOS.</li>
-          <li>Esta memoria USB debe contener uan carpeta llamada <code>Modes</code> en su nivel superior. (Este nombre es sensible a mayusculas y minusculas.) todos los modos a ser cargados deben vivir aqui, como se detalla mas abajo.</li>
-          <li>El nivel superior de la memoria USB tambien puede contener una carpeta llamada <code>Grabs</code> para almacenar las capturas de pantalla tomadas, un archivo llamado <code>Scenes.csv</code> para almacenar todas las escenas grabadas, y un archivo <code>MIDI-Channel.txt</code> que define el canal MIDI de entrada por el que el ETC escucha. Si no estan presentes, estos items pueden ser creados de forma automatica cuando sean necesarios.</li>
+          <li>Esta memoria USB debe estar formateada con el sistema de archivos FAT, a menudo asociado con MS-DOS.</li>
+          <li>Esta memoria USB debe contener uan carpeta llamada <code>Modes</code> en su nivel superior. (Este nombre es sensible a may&uacute;sculas y min&uacute;sculas). Todos los modos a ser cargados deben vivir aqu&iacute;, como se detalla m&aacute;s abajo.</li>
+          <li>El nivel superior de la memoria USB tambi&eacute;n puede contener una carpeta llamada <code>Grabs</code> para almacenar las capturas de pantalla tomadas, un archivo llamado <code>Scenes.csv</code> para almacenar todas las escenas grabadas, y un archivo <code>MIDI-Channel.txt</code> que define el canal MIDI de entrada por el que el ETC escucha. Si no est&aacute;n presentes, estos items pueden ser creados de forma autom&aacute;tica cuando sean necesarios.</li>
         </ul>
 
-        <p>El siguiente es un listado de carpetas de ejemplo de una memoria USB lista para funcionar con el ETC. Puedes ver cuatro modos aqui, cada uno con su archivo requerido <code>main.py</code>, ademas de la carpeta <code>Grabs</code> y un archivo <code>Scenes.csv</code>. </p>
+        <p>El siguiente es un listado de carpetas de ejemplo de una memoria USB lista para funcionar con el ETC. Puedes ver cuatro modos aqu&iacute;, cada uno con su archivo requerido <code>main.py</code>, adem&aacute;s de la carpeta <code>Grabs</code> y un archivo <code>Scenes.csv</code>. </p>
 
         <pre><code>Grabs\
 	0.jpg
@@ -508,31 +508,31 @@ Scenes.csv
         <p>Un par de cosas dignas de mencionar sobre los modos:</p>
 
         <ul>
-          <li>En las cuatro carpetas de modos mostradas arriba, todas tienen el archivo requerido <code>main.py</code>. Mientras estos archivos de codigo en Python contengan los requerimientos minimos de un modo de ETC, todos ellos seran tratados como modos validos y cargados cuando el dispositivo se encienda. (Para informacion sobre como programar y editar modos, revisa el capitulo cuatro).</li>
-          <li>Tres de estas carpetas de modo tambien incluyen archivos <code>main.pyc</code>. Estos archivos intermediarios son creados automaticamente por el compilador de Python en ETC. Estos archivos pueden acelerar las futuras interpretaciones del codigo, pero estos archivos PYC no son requeridos ni necesarios. (El primer modo listado no posee un archivo <code>main.pyc</code> file, lo que sugiere que es un modo nuevo que todavia no ha sido ejecutado por el ETC).</li>
-          <li>Otros archivos necesitados por tu modo tambien deberan ser incluidos en la carpeta del modo. Esto incluye imagenes, codigo en Python adicional, archivos de tipografia, y lo que sea necesario.</li>
-          <li>Tambien nota que las carpetas de modo pueden contener subcarpetas, las que pueden ser reconocidas por el modo contenedor.</li>
+          <li>En las cuatro carpetas de modos mostradas arriba, todas tienen el archivo requerido <code>main.py</code>. Mientras estos archivos de c&oacute;digo en Python contengan los requerimientos m&iacute;nimos de un modo de ETC, todos ellos ser&aacute;n tratados como modos v&aacute;lidos y cargados cuando el dispositivo se encienda. (Para informaci&oacute;n sobre c&oacute;mo programar y editar modos, revisa el cap&iacute;tulo cuatro).</li>
+          <li>Tres de estas carpetas de modo tambi&eacute;n incluyen archivos <code>main.pyc</code>. Estos archivos intermediarios son creados autom&aacute;ticamente por el compilador de Python en ETC. Estos archivos pueden acelerar las futuras interpretaciones del c&oacute;digo, pero estos archivos PYC no son requeridos ni necesarios. (El primer modo listado no posee un archivo <code>main.pyc</code> file, lo que sugiere que es un modo nuevo que todav&iacute;a no ha sido ejecutado por el ETC).</li>
+          <li>Otros archivos necesitados por tu modo tambien deber&aacute;n ser incluidos en la carpeta del modo. Esto incluye im&aacute;genes, c&oacute;digo en Python adicional, archivos de tipograf&iacute;a, y lo que sea necesario.</li>
+          <li>Tambi&eacute;n nota que las carpetas de modo pueden contener subcarpetas, las que pueden ser reconocidas por el modo contenedor.</li>
         </ul>
 
         <hr>
 
         <h2 id="Taking_the_USB_Drive_to_your_Computer">Llevando la memoria USB a tu computador</h2>
 
-        <p>Ya sea si quieres cargar nuevos modos, descargar algunas de tus capturas de pantalla, o editar el archivo <code>Scenes.csv</code> o los modos en si mismos, cualquiera de estas acciones requiere acceder a los archivos de la memoria USB del ETC. Una forma de hacerlo es conectar la memoria USB a tu computador. Discutiremos eso aqui. (Una segunda forma es editar los modos con la <em>interfaz USB Wi-Fi</em> [que se puede adquirir de forma adicional] para acceso remoto (wireless). Cubriremos esto en el capitulo cuatro).</p>
+        <p>Ya sea si quieres cargar nuevos modos, descargar algunas de tus capturas de pantalla, o editar el archivo <code>Scenes.csv</code> o los modos en s&iacute; mismos, cualquiera de estas acciones requiere acceder a los archivos de la memoria USB del ETC. Una forma de hacerlo es conectar la memoria USB a tu computador. Discutiremos eso aqu&iacute;. (Una segunda forma es editar los modos con la <em>interfaz USB Wi-Fi</em> [que se puede adquirir de forma adicional] para acceso remoto (wireless). Cubriremos esto en el cap&iacute;tulo cuatro).</p>
 
-        <p>Si la memoria USB se encuentra conectada al ETC, primero debes apagar la unidad presionando el boton <em>Shutdown</em> por un par de segundos. Veras que el <em>Status LED</em> se pondra rosado mientras el sistema se apaga, y luego el LED se apagara. Solo despues de que el <em>Status LED</em> se apaga, es seguro desconectar la memoria USB.</p>
+        <p>Si la memoria USB se encuentra conectada al ETC, primero debes apagar la unidad presionando el bot&oacute;n <em>Shutdown</em> por un par de segundos. Ver&aacute;s que el <em>Status LED</em> se pondr&aacute; rosado mientras el sistema se apaga, y luego el LED se apagar&aacute;. Solo despues de que el <em>Status LED</em> se apaga, es seguro desconectar la memoria USB.</p>
 
-        <p>Cuando se usa la memoria USB incluida, asegurate de que este orientada en la direccion correcta antes de conectarla a tu computador. La memoria que viene con el ETC tiene un perfil extremadamente bajo, consistente en la mitad inferior de la mayoria de los cables y conectores USB estandar. Por esto, es posible conectar la memoria en forma inversa. Esto generalmente no provoca danos pero es mejor prevenirlo.<br>Asegurate de que los pins expuestos - yo me los imagino como dientes —&nbsp; esten mirando hacia “arriba,” hacia donde debiera ir la parte de arriba de un cable USB. (En los computadores Mac, por ejemplo, los pins deben apuntar hacia arriba, hacia el cielo).</p>
+        <p>Cuando se usa la memoria USB incluida, aseg&uacute;rate de que est&eacute; orientada en la direcci&oacute;n correcta antes de conectarla a tu computador. La memoria que viene con el ETC tiene un perfil extremadamente bajo, consistente en la mitad inferior de la mayor&iacute;a de los cables y conectores USB est&aacute;ndar. Por esto, es posible conectar la memoria en forma inversa. Esto generalmente no provoca da&ntilde;os pero es mejor prevenirlo.<br>Aseg&uacute;rate de que los pins expuestos - yo me los imagino como dientes —&nbsp; est&eacute;n mirando hacia “arriba,” hacia donde debiera ir la parte de arriba de un cable USB. (En los computadores Mac, por ejemplo, los pins deben apuntar hacia arriba, hacia el cielo).</p>
 
-        <p>Una vez que la memoria este conectada y sea reconocida por el computador, aparecera algo como lo siguiente..</p>
+        <p>Una vez que la memoria est&eacute; conectada y sea reconocida por el computador, aparecer&aacute; algo como lo siguiente.</p>
 
         <figure><img style="max-width:100%" src="./ETC Manual_files/ETC_example_filestructure.png"></figure>
 
-        <p>El nivel superior de mi memoria USB, cuyo nombre de disco es <code>ETC</code>, se muestra arriba. Este nivel de inicio contiene la carpeta <code>Grabs</code>, donde se almacenaron tres capturas de pantalla. Ahora seria un buen momento para mover estas imagenes a tu computador para un uso posterior..</p>
+        <p>El nivel superior de mi memoria USB, cuyo nombre de disco es <code>ETC</code>, se muestra arriba. Este nivel de inicio contiene la carpeta <code>Grabs</code>, donde se almacenaron tres capturas de pantalla. Ahora ser&iacute;a un buen momento para mover estas im&aacute;genes a tu computador para un uso posterior.</p>
 
-        <p>Una sugerencia sobre las capturas de pantalla. Aunque puedes copiar los archivos en tu computador y mantener los originales en tu memoria USB, una mejor practica es regularmente remover tus capturas de pantalla de la memoria USB. Es facil quedarse sin espacio en la memoria USB al acumular capturas de pantalla, ya sea lenta o rapidamente. En vez de ejecutar con poco espacio sin darte cuenta, es mejor remover estas imagenes de forma regular.</p>
+        <p>Una sugerencia sobre las capturas de pantalla. Aunque puedes copiar los archivos en tu computador y mantener los originales en tu memoria USB, una mejor pr&aacute;ctica es regularmente remover tus capturas de pantalla de la memoria USB. Es f&aacute;cil quedarse sin espacio en la memoria USB al acumular capturas de pantalla, ya sea lenta o r&aacute;pidamente. En vez de ejecutar con poco espacio sin darte cuenta, es mejor remover estas imagenes de forma regular.</p>
 
-        <p>En el nivel superior tambien se encuentra el archivo <code>Scenes.csv</code>. Este archivo de valores separados por coma se puede leer si lo abres en un editor de texto, donde cada linea se ve mas o menos asi:</p>
+        <p>En el nivel superior tambi&eacute;n se encuentra el archivo <code>Scenes.csv</code>. Este archivo de valores separados por coma se puede leer si lo abres en un editor de texto, donde cada l&iacute;nea se ve mas o menos as&iacute;:</p>
 
         <pre><code>bouncing-ball,0.0,0.2668621700879765,0.5141739980449658,0.7526881720430108,1.0,False
 </code></pre>
@@ -541,74 +541,74 @@ Scenes.csv
 
         <pre><code>Modo, perilla de primer plano 1, perilla de primer plano 2, perilla de primer plano 3, perilla de primer plano 4, perilla de color de fondo, boton Auto Clear Toggle</code></pre>
 
-        <p>Si eres valiente y estas interesado, puedes tratar de editar estos valores de escena o simplemente reordenar estas lineas. Te recomendamos primero hacer antes una copia local de los archivos, como respaldo. (si las cosas se salen de control, siempre puedes borrar el archivo <code>Scenes.csv</code>. Cuando se necesita un nuevo archivo, ETC lo crea).</p>
+        <p>Si eres valiente y est&aacute;s interesado, puedes tratar de editar estos valores de escena o simplemente reordenar estas l&iacute;neas. Te recomendamos primero hacer antes una copia local de los archivos, como respaldo. (Si las cosas se salen de control, siempre puedes borrar el archivo <code>Scenes.csv</code>. Cuando se necesita un nuevo archivo, ETC lo crea).</p>
 
-        <p>Dentro de la carpeta <code>Modes</code> del nivel superior, se seleccionan los cuatro modos (con coloracion azul), y sus contenidos son expuestos. Entonces en el ejemplo de arriba, los cuatro modos disponibles en el ETC son <code>S - Circle Scope Connected</code>, <code>S - Feynman</code>, <code>T - Density Cloud</code>, y <code>T - Spanish Flash Cards</code>. Una vez mas, la practica con los modos de fabrica es que un modo que empiece con <code>S - </code> indica iun modo visor y uno que empieza con <code>T - </code> indica un modo gatillo (ver capitulo uno).</p>
+        <p>Dentro de la carpeta <code>Modes</code> del nivel superior, se seleccionan los cuatro modos (con coloraci&oacute;n azul), y sus contenidos son expuestos. Entonces en el ejemplo de arriba, los cuatro modos disponibles en el ETC son <code>S - Circle Scope Connected</code>, <code>S - Feynman</code>, <code>T - Density Cloud</code>, y <code>T - Spanish Flash Cards</code>. Una vez m&aacute;s, la pr&aacute;ctica con los modos de f&aacute;brica es que un modo que empiece con <code>S - </code> indica iun modo visor y uno que empieza con <code>T - </code> indica un modo gatillo (ver cap&iacute;tulo uno).</p>
 
-        <p>Cuando estes trabajando con estos modos, lo mas probable es que quieras trabajar con sus carpetas en vez de manejar los archivos detnro de cada carpeta. Por ejemplo:</p>
+        <p>Cuando est&eacute;s trabajando con estos modos, lo m&aacute;s probable es que quieras trabajar con sus carpetas en vez de manejar los archivos detnro de cada carpeta. Por ejemplo:</p>
 
         <ul>
-          <li><em>Si quieres agregar un nuevo modo al ETC,</em> asegurate de copiar la carpeta completa en la carpeta <code>Modes</code> de la memoria USB. (Y si descargaste un archivo ZIP, asegurate de descomprimirlo a una carpeta antes de moverlo a la memoria USB del ETC).</li>
+          <li><em>Si quieres agregar un nuevo modo al ETC,</em> aseg&uacute;rate de copiar la carpeta completa en la carpeta <code>Modes</code> de la memoria USB. (Y si descargaste un archivo ZIP, asegurate de descomprimirlo a una carpeta antes de moverlo a la memoria USB del ETC).</li>
           <li><em>Si quieres respaldar un modo,</em> copia la carpeta a tu computador.</li>
-          <li><em>Si quieres cambiarle el nombre a un modo,</em> cambiale el nombre a la carpeta.</li>
+          <li><em>Si quieres cambiarle el nombre a un modo,</em> c&aacute;mbiale el nombre a la carpeta.</li>
           <li><em>Si quieres duplicar un modo y hacerle cambios a la copia nueva,</em> duplica la carpeta y ponle un nombre distinto a la carpeta.</li>
-          <li><em>Si quieres eliminar un modo,</em> aesgurate de borrar completamente la carpeta del modo.</li>
+          <li><em>Si quieres eliminar un modo,</em> aseg&uacute;rate de borrar completamente la carpeta del modo.</li>
         </ul>
 
-        <p>Resumiendo, si no estas editando los archivos en si mismos, trabajar con archivos dentro de la carpeta del modo puede causar problemas.</p>
+        <p>Resumiendo, si no est&aacute;s editando los archivos en s&iacute; mismos, trabajar con archivos dentro de la carpeta del modo puede causar problemas.</p>
 
-        <p>Finalmente, nota que cualquier otra carpeta o archivo ubicado en la memoria USB sera ignorado por el ETC. Esto significa que puedes mantener una carpeta de respaldo de modos en la memoria USB mientras editas las versiones “en vivo”, O esto puede ser util para tener distintas “presentaciones”  de modos o incluso distintos archivos de escena. La idea de presentacion podria ser duplicar o tu carpeta <code>Modes</code> o tu archivo <code>Scenes.csv</code>, y luego cambiar el nombre de la version que quieres guardar para uso futuro. !Asegurate de que los archivos apropiados tengan los nombres apropiados antes de subir al escenario!</p>
+        <p>Finalmente, nota que cualquier otra carpeta o archivo ubicado en la memoria USB ser&aacute; ignorado por el ETC. Esto significa que puedes mantener una carpeta de respaldo de modos en la memoria USB mientras editas las versiones “en vivo”, o esto puede ser &uacute;til para tener distintas “presentaciones”  de modos o incluso distintos archivos de escena. La idea de presentaci&oacute;n podr&iacute;a ser duplicar o tu carpeta <code>Modes</code> o tu archivo <code>Scenes.csv</code>, y luego cambiar el nombre de la versi&oacute;n que quieres guardar para uso futuro. ¡Aseg&uacute;rate de que los archivos apropiados tengan los nombres apropiados antes de subir al escenario!</p>
 
         <hr>
 
         <h2 id="ETC’s_MIDI_Configuration">Configuraci&oacute;n MIDI del ETC</h2>
 
-        <p>Como lo sugiere el puerto<code>MIDI In</code> (entrada MIDI) del ETC, se pueden conectar controladores MIDI externos a el. Adicionalmente a los dispositivos con conectores regulares (/anticuados) de DIN de cinco pins, se pueden conectar dispositivos USB MIDI al ETC. Para asegurar compatibilidad, sugerimos que selecciones un controlador USB MIDI class-compliant, esto es, que no requiera instalacion de software adicional para su uso.</p>
+        <p>Como lo sugiere el puerto<code>MIDI In</code> (entrada MIDI) del ETC, se pueden conectar controladores MIDI externos a &eacute;l. Adicionalmente a los dispositivos con conectores regulares (/anticuados) de DIN de cinco pins, se pueden conectar dispositivos USB MIDI al ETC. Para asegurar compatibilidad, sugerimos que selecciones un controlador USB MIDI class-compliant, esto es, que no requiera instalaci&oacute;n de software adicional para su uso.</p>
 
-        <p>Para intectuar apropiadamente con el ETC, necesitamos conocer la implementacion MIDI de este dispositivo. Para empezar, el ETC solo escucha los mensajes MIDI en el canal especificado (por defecto, el canal MIDI 1). Ademas, solo un pequeno subconjunto de mensajes MIDI tiene un efecto real en los modos de operacion del ETC.</p>
+        <p>Para interactuar apropiadamente con el ETC, necesitamos conocer la implementaci&oacute;n MIDI de este dispositivo. Para empezar, el ETC solo escucha los mensajes MIDI en el canal especificado (por defecto, el canal MIDI 1). Adem&aacute;s, solo un peque&ntilde;o subconjunto de mensajes MIDI tiene un efecto real en los modos de operaci&oacute;n del ETC.</p>
 
-        <p>En otras palabras, tu controlador puede enviar algunos mensajes que el ETC no reconoce, y eso no causara problemas. Estos mensajes no produciran ningun efecto en el ETC, ni tampoco ocasionaran problemas asi que no te hagas problemas en “descativar la escucha activa”, etc. etc.</p>
+        <p>En otras palabras, tu controlador puede enviar algunos mensajes que el ETC no reconoce, y eso no causar&aacute; problemas. Estos mensajes no producir&aacute;n ning&uacute;n efecto en el ETC, ni tampoco ocasionar&aacute;n problemas as&iacute; que no te hagas problemas en “descativar la escucha activa”, etc. etc.</p>
 
-        <p> Empecemos examinando los distintos tipos de mensajes que usa el ETC. Tambien terminaremos con unas palabras sobre como cambiar el canal MIDI de entrada que el ETC escucha.</p>
+        <p> Empecemos examinando los distintos tipos de mensajes que usa el ETC. Tambi&eacute;n terminaremos con unas palabras sobre c&oacute;mo cambiar el canal MIDI de entrada que el ETC escucha.</p>
 
         <h4>Mensajes de cambio de controlador (Control Change)</h4>
 
-        <p>Los mensajes de cambio de controlador que usan numeros de controlador entre <code>21</code> y <code>25</code> hacen efecto en el ETC. Las siguientes perilllas corresopnden al numero de controlador listado:</p>
+        <p>Los mensajes de cambio de controlador que usan n&uacute;meros de controlador entre <code>21</code> y <code>25</code> hacen efecto en el ETC. Las siguientes perilllas corresopnden al n&uacute;mero de controlador listado:</p>
 
         <ul>
-          <li>Numero de controlador <code>21</code> &gt; <em>Perilla de control de primer plano 1</em></li>
-          <li>Numero de controlador <code>22</code> &gt; <em>Perilla de control de primer plano 2</li>
-          <li>Numero de controlador <code>23</code> &gt; <em>Perilla de control de primer plano 3</li>
-          <li>Numero de controlador <code>24</code> &gt; <em>Perilla de control de primer plano 4</li>
-          <li>Numero de controlador <code>25</code> &gt; <em>Perilla de color de fondo</em>(Background Color)</li>
+          <li>N&uacute;mero de controlador <code>21</code> &gt; <em>Perilla de control de primer plano 1</em></li>
+          <li>N&uacute;mero de controlador <code>22</code> &gt; <em>Perilla de control de primer plano 2</li>
+          <li>N&uacute;mero de controlador <code>23</code> &gt; <em>Perilla de control de primer plano 3</li>
+          <li>N&uacute;mero de controlador <code>24</code> &gt; <em>Perilla de control de primer plano 4</li>
+          <li>N&uacute;mero de controlador <code>25</code> &gt; <em>Perilla de color de fondo</em>(Background Color)</li>
         </ul>
 
-        <p>Cada valor de mensaje entrante reemplaza el valor actual del controlador respectivo. Entonces incluso si la perilla de primer plano 2 esta lo mas a la derecha, un mensaje entrante de controlador de numero <code>22</code> con un valor <code>0</code> cambiara el valor del controlador de primer plano 2 a cero. cuando muevas de nuevo la perilla de <em>control de primer plano 2</em>, se restaurara el control.</p>
+        <p>Cada valor de mensaje entrante reemplaza el valor actual del controlador respectivo. Entonces incluso si la perilla de primer plano 2 esta lo m&aacute;s a la derecha, un mensaje entrante de controlador de n&uacute;mero <code>22</code> con un valor <code>0</code> cambiar&aacute; el valor del controlador de primer plano 2 a cero. Cuando muevas de nuevo la perilla de <em>control de primer plano 2</em>, se restaurar&aacute; el control.</p>
 
         <h4>Mensajes de cambio de programa (Program Change)</h4>
 
-        <p>Los mensajes de cambio de programa recibidos por el ETC cambian a la escena especificada por el valor del mensaje. Entonces, si se recibe un mensaje de cambio de programa con un valor de <code>1</code>, el ETC ira a la primera escena grabada, y un mensaje de cambio de prorgrama con valor <code>4</code> ira a la cuarta escena, etc.</p>
+        <p>Los mensajes de cambio de programa recibidos por el ETC cambian a la escena especificada por el valor del mensaje. Entonces, si se recibe un mensaje de cambio de programa con un valor de <code>1</code>, el ETC ir&aacute; a la primera escena grabada, y un mensaje de cambio de prorgrama con valor <code>4</code> ir&aacute; a la cuarta escena, etc.</p>
 
-        <p>Si no hay escenas almacenadas en el ETC, entonces estos mensajes de cambio de programa se mapean a las modos cargados correspondientes. Entonces un mensaje de cambio de programa con valor <code>1</code> cargara el primer modo, <code>9</code> el noveno modo, etc.</p>
+        <p>Si no hay escenas almacenadas en el ETC, entonces estos mensajes de cambio de programa se mapean a las modos cargados correspondientes. Entonces un mensaje de cambio de programa con valor <code>1</code> cargar&aacute; el primer modo, <code>9</code> el noveno modo, etc.</p>
 
         <h4>Mensajes de nota</h4>
 
-        <p>Todos los mensajes entrantes de nota (de nuevo, en el canal gloal de entrada MIDI) son recibidos por el ETC. Se provee informacion sobre estos mensajes de nota en dos maneras:</p>
+        <p>Todos los mensajes entrantes de nota (de nuevo, en el canal global de entrada MIDI) son recibidos por el ETC. Se provee informaci&oacute;n sobre estos mensajes de nota de dos maneras:</p>
 
         <ul>
-          <li>El ETC hace un seguimiento de los mensajes de nota entrantes, anotando en todo momento cuales alturas estan encendidas y apagadas.</li>
-          <li>El ETC notifica cada vez que un mensaje de encendido de nota (note on) ha sido recibido desde el cuadro de video anterior. Esto puede ser muy util para crear un efecto de "gatillo de nota" en tus modos.</li>
+          <li>El ETC hace un seguimiento de los mensajes de nota entrantes, anotando en todo momento cu&aacute;les alturas est&aacute;n encendidas y apagadas.</li>
+          <li>El ETC notifica cada vez que un mensaje de encendido de nota (note on) ha sido recibido desde el cuadro de video anterior. Esto puede ser muy &uacute;til para crear un efecto de "gatillo de nota" en tus modos.</li>
         </ul>
 
         <p>Cualquier modo puede ser uno o ambos de estos datos de estado.</p>
 
-        <p>Adicionalmente, la ultima nota MIDI (altura <code>127</code>) es usada para alternar el estado de la funcion de auto borrado, actuando de la misma forma que el boton <em>Auto Clear Toggle</em>. Entonces, cualquier mensaje de encendido de nota con altura <code>127</code>  cambia el estado actual (si estaba encendido, lo apaga, y vice versa).</p>
+        <p>Adicionalmente, la &uacute;ltima nota MIDI (altura <code>127</code>) es usada para alternar el estado de la funci&oacute;n de auto borrado, actuando de la misma forma que el bot&oacute;n <em>Auto Clear Toggle</em>. Entonces, cualquier mensaje de encendido de nota con altura <code>127</code> cambia el estado actual (si estaba encendido, lo apaga, y vice versa).</p>
 
         <h4>Mensajes de reloj MIDI</h4>
 
-        <p>El ETC tambien entiende un par de mensajes MIDI de sistema en tiempo real. Algunos secuenciadores soportan este metodo de reloj, pero es lo suficientemente simple como para ser construido en otro ambiente (como Pure Data [lease: para <strong>Organelle</strong>], Max, Reaktor, etc.).</p>
+        <p>El ETC tambi&eacute;n entiende un par de mensajes MIDI de sistema en tiempo real. Algunos secuenciadores soportan este m&eacute;todo de reloj, pero es lo suficientemente simple como para ser construido en otro ambiente (como Pure Data [le&aacute;se: para <strong>Organelle</strong>], Max, Reaktor, etc.).</p>
 
-        <p>El concepto MIDI de mensajes de sistema en tiempo real es que un <em>relok temporizador</em> es recibido 24 veces por nota negra para proposito de sincronizacion. De la misma forma, cada vez que el ETC recibe un mensaje de temporizado de relok, se aumenta en uno un contador interno. Despues del paso numero 24, el contador vuelve a su valor minimo y prosigue la cuenta. Adicionalmente, cualquier mensaje <em>start</em> (inicio) de tiempo real recibido, tambien gatilla que el contador sea reseteado en la siguiente pulsacion de reloj.</p>
+        <p>El concepto MIDI de mensajes de sistema en tiempo real es que un <em>reloj temporizador</em> es recibido 24 veces por nota negra para pr&oacute;posito de sincronizaci&oacute;n. De la misma forma, cada vez que el ETC recibe un mensaje de temporizado de reloj, se aumenta en uno un contador interno. Despues del paso numero 24, el contador vuelve a su valor minimo y prosigue la cuenta. Adicionalmente, cualquier mensaje <em>start</em> (inicio) de tiempo real recibido, tambien gatilla que el contador sea reseteado en la siguiente pulsacion de reloj.</p>
 
         <p>Este valor de contador interno del ETC es accesible desde cualquier modo que quiera usarlo. Al usar algunos pasos del contador, puedes crear efectos que estan ritmicamente sincronizados a tu gusto.</p>
 
