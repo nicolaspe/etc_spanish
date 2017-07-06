@@ -108,9 +108,9 @@
           <li><a href="http://etctv.io/manual-spanish.html#ETC’s_MIDI_Configuration">Configuraci&oacute;n MIDI del ETC</a></li>
         </ul>
       </li>
-      <li><a href="http://etctv.io/manual-spanish.html#Chapter_Four:_Programming_For_ETC,_and_Access_via_Wi-Fi">Cap&iacute;tulo cuatro: programando el ETC y acceso via Wi-Fi</a>
+      <li><a href="http://etctv.io/manual-spanish.html#Chapter_Four:_Programming_For_ETC,_and_Access_via_Wi-Fi">Cap&iacute;tulo cuatro: programando el ETC y acceso v&iacute;a Wi-Fi</a>
         <ul>
-          <li><a href="http://etctv.io/manual-spanish.html#How_Mode_Scripts_Work">Funcionamiento de los scripts de Mode</a></li>
+          <li><a href="http://etctv.io/manual-spanish.html#How_Mode_Scripts_Work">Funcionamiento de los scripts de modo</a></li>
           <li><a href="http://etctv.io/manual-spanish.html#ETC’s_API">API del ETC</a></li>
           <li><a href="http://etctv.io/manual-spanish.html#Wirelessly_Programming_with_the_USB_Wi-Fi_Interface">Programaci&oacute;n inal&aacute;mbrica con la interfaz USB Wi-Fi</a></li>
         </ul>
@@ -458,13 +458,11 @@
 
         <h3>Entrando y saliendo del ETC.</h3>
 
-        HEREIAM
-
         <p>Primero, ¡estamos muy contentos que hayas llegado hasta ac&aacute;! Y en caso de que hayas saltado a este cap&iacute;tulo, ¡aseg&uacute;rate de volver atras y leer el cap&iacute;tulo 2! Asumimos que tienes clara la operaci&oacute;n general del ETC hasta este punto. Habiendo dicho esto, prosigamos.</p>
 
         <p>En este cap&iacute;tulo, nos saldremos del ETC en s&iacute; mismo para enfocarnos en c&oacute;mo interact&uacute;a con el resto del mundo. El ETC puede operar exitosamente con sus modos de f&aacute;brica y sus controles en el dispositivo, pero adem&aacute;s puedes expandir dram&aacute;ticamente este dispositivo de performance con modos nuevos y/o fuentes de control adicionales. Aqu&iacute; veremos formas de expandir el rango del ETC en estas dimensiones.</p>
 
-        <p>Empezaremos con algunos fundamentos, revisando la estructura de carpetas usadas en la memoria USB del ETC, donde viven todos tus modos y capturas de pantalla. Si quieres cargar modos adicionales o simplemente descargar tus capturas de pantalla necesitar&aacute;s trabajar con tu memoria USB (y tu computador) para ubicar los nuevos modos y sus archivos de apoyo en el lugar correcto. Despu&eacute;s, veremos c&oacute;mo acceder a la memoria USB por medio de su conexi&oacute;n con tu computador. Finalmente, revisaremos la implementaci&oacute;n MIDI del ETC. Esto sera &uacute;til si quieres conectar MIDI externo - incluyendo controladores USB MIDI —&nbsp;al ETC, o incluso si conectas tu ETC con secuenciador externo.</p>
+        <p>Empezaremos con algunos fundamentos, revisando la estructura de carpetas usadas en la memoria USB del ETC, donde viven todos tus modos y capturas de pantalla. Si quieres cargar modos adicionales o simplemente descargar tus capturas de pantalla necesitar&aacute;s trabajar con tu memoria USB (y tu computador) para ubicar los nuevos modos y sus archivos de apoyo en el lugar correcto. Despu&eacute;s, veremos c&oacute;mo acceder a la memoria USB por medio de su conexi&oacute;n con tu computador. Finalmente, revisaremos la implementaci&oacute;n MIDI del ETC. Esto sera &uacute;til si quieres conectar MIDI externo - incluyendo controladores USB MIDI —&nbsp;al ETC, o incluso si conectas tu ETC con un secuenciador externo.</p>
 
         <p>Si est&aacute;s buscando modos adicionales de expresi&oacute;n, has venido al lugar correcto. Expandamos nuestro ETC…</p>
 
@@ -476,7 +474,7 @@
 
         <ul>
           <li>Esta memoria USB debe estar formateada con el sistema de archivos FAT, a menudo asociado con MS-DOS.</li>
-          <li>Esta memoria USB debe contener uan carpeta llamada <code>Modes</code> en su nivel superior. (Este nombre es sensible a may&uacute;sculas y min&uacute;sculas). Todos los modos a ser cargados deben vivir aqu&iacute;, como se detalla m&aacute;s abajo.</li>
+          <li>Esta memoria USB debe contener una carpeta llamada <code>Modes</code> en su nivel superior. (Este nombre es sensible a may&uacute;sculas y min&uacute;sculas). Todos los modos a ser cargados deben vivir aqu&iacute;, como se detalla m&aacute;s abajo.</li>
           <li>El nivel superior de la memoria USB tambi&eacute;n puede contener una carpeta llamada <code>Grabs</code> para almacenar las capturas de pantalla tomadas, un archivo llamado <code>Scenes.csv</code> para almacenar todas las escenas grabadas, y un archivo <code>MIDI-Channel.txt</code> que define el canal MIDI de entrada por el que el ETC escucha. Si no est&aacute;n presentes, estos items pueden ser creados de forma autom&aacute;tica cuando sean necesarios.</li>
         </ul>
 
@@ -608,44 +606,46 @@ Scenes.csv
 
         <p>El ETC tambi&eacute;n entiende un par de mensajes MIDI de sistema en tiempo real. Algunos secuenciadores soportan este m&eacute;todo de reloj, pero es lo suficientemente simple como para ser construido en otro ambiente (como Pure Data [le&aacute;se: para <strong>Organelle</strong>], Max, Reaktor, etc.).</p>
 
-        <p>El concepto MIDI de mensajes de sistema en tiempo real es que un <em>reloj temporizador</em> es recibido 24 veces por nota negra para pr&oacute;posito de sincronizaci&oacute;n. De la misma forma, cada vez que el ETC recibe un mensaje de temporizado de reloj, se aumenta en uno un contador interno. Despues del paso numero 24, el contador vuelve a su valor minimo y prosigue la cuenta. Adicionalmente, cualquier mensaje <em>start</em> (inicio) de tiempo real recibido, tambien gatilla que el contador sea reseteado en la siguiente pulsacion de reloj.</p>
+        <p>El concepto MIDI de mensajes de sistema en tiempo real es que un <em>reloj temporizador</em> es recibido 24 veces por nota negra para pr&oacute;posito de sincronizaci&oacute;n. De la misma forma, cada vez que el ETC recibe un mensaje de temporizado de reloj, se aumenta en uno un contador interno. Despu&eacute;s del paso n&uacute;mero 24, el contador vuelve a su valor m&iacute;nimo y prosigue la cuenta. Adicionalmente, cualquier mensaje <em>start</em> (inicio) de tiempo real recibido, tambi&eacute;n gatilla que el contador sea reseteado en la siguiente pulsaci&oacute;n de reloj.</p>
 
-        <p>Este valor de contador interno del ETC es accesible desde cualquier modo que quiera usarlo. Al usar algunos pasos del contador, puedes crear efectos que estan ritmicamente sincronizados a tu gusto.</p>
+        <p>Este valor de contador interno del ETC es accesible desde cualquier modo que quiera usarlo. Al usar algunos pasos del contador, puedes crear efectos que estan r&iacute;tmicamente sincronizados a tu gusto.</p>
 
-        <p>Por favor nota que los mensajes de reloj MIDI son mensajes MIDI de <em>sistema</em>. Esto signifca que estos mensajes seran recibidos y usados sin importar el actual canal global MIDI.</p>
+        <p>Por favor nota que los mensajes de reloj MIDI son mensajes MIDI de <em>sistema</em>. Esto signifca que estos mensajes ser&aacute;n recibidos y usados sin importar el actual canal global MIDI.</p>
 
-        <h4>Modificacion del canal MIDI global</h4>
+        <h4>Modificaci&oacute;n del canal MIDI global</h4>
 
-        <p>Previamente mencionamos un archivo llamado <code>MIDI-Channel.txt</code> en el nivel superior de la memoria USB. Este archivo de texto plano debe contener solo un numero. Si el numero esta entre <code>1</code> y <code>16</code>, el ETC solo escuchara en ese canal MIDI especificado los mensajes MIDI entrantes, y todos los otros canales seran ignorados.</p>
+        <p>Previamente mencionamos un archivo llamado <code>MIDI-Channel.txt</code> en el nivel superior de la memoria USB. Este archivo de texto plano debe contener solo un n&uacute;mero. Si el n&uacute;mero est&aacute; entre <code>1</code> y <code>16</code>, el ETC solo escuchar&aacute; en ese canal MIDI especificado los mensajes MIDI entrantes, y todos los otros canales ser&aacute;n ignorados.</p>
 
-        <p>Si se configura el archivo para que contenga un <code>0</code> (el numero cero), el ETC cambiara a modo omni, indicandole al dispositivo que que ignore el canal MIDI de mensaje entrante y que responda a todo lo que reciba. Por ejemplo, esto puede ser preferible si estas usando un controlador midi que tiene botones y/o perillas (tipicamente transmitidos en el canal 1) y pads de percusion (tipicamente transmitidos en el canal 10).</p>
+        <p>Si se configura el archivo para que contenga un <code>0</code> (el n&uacute;mero cero), el ETC cambiara a modo omni, indicandole al dispositivo que que ignore el canal MIDI de mensaje entrante y que responda a todo lo que reciba. Por ejemplo, esto puede ser preferible si est&aacute;s usando un controlador midi que tiene botones y/o perillas (t&iacute;picamente transmitidos en el canal 1) y pads de percusi&oacute;n (t&iacute;picamente transmitidos en el canal 10).</p>
 
-        <p>Finalmente, si este archivo <code>MIDI-Channel.txt</code> es borrado o no es legible, el ETC usara por defecto el canal MIDI 1 cuando se inicialice.</p>
-
-        <hr>
-        <h1 id="Chapter_Four:_Programming_For_ETC,_and_Access_via_Wi-Fi">Cap&iacute;tulo cuatro: programando el ETC y acceso via Wi-Fi</h1>
-
-        <h3>For those with a text editor and a dream.</h3>
-
-        <p>Well, here we are. The place where dreams and/or ETC modes are made.</p>
-
-        <p>First of all, this chapter may not be for you. If we may say so ourselves, ETC is rather functional and expressive without getting into coding. So if you are comfortable with using ETC and would rather stick with the artistic side of your brain, that is great. Focus on what is going to benefit you the most, and go in peace. If you ever want to come back, we will be here. Waiting.</p>
-
-        <p>And while this chapter focuses on how ETC works and the methods available to you within this framework, we are not going to teach you how to code. We don’t have enough pages or Red Bull to do that here. But don’t despair. Now more than ever, there is a bounty of resources available that will help you learn about programming in general and about particular languages (such as <strong>Python</strong>). Searching the internet, the library, or even local computer classes on offer will give you some good leads and help you find a way forward to start programming.</p>
-
-        <p>Now, if you enjoy coding already (or are considering it), or if you have some video ideas that you need to express, then let’s proceed. Just pull that lever to pop the hood.</p>
-
-        <p>In this chapter, we will start with the concepts and requirements for any ETC mode. Each mode doesn’t require much, but talking about what does need to be there will give us a good picture of how ETC operates. We will then outline ETC’s application program interface (API). Beyond the required pieces, these are the available functions and properties that you can make use of in any mode. Finally, we will look at connecting to ETC for the purpose of editing modes directly while the device is running. This can be done via the optional USB Wi-Fi interface, which is an additional purchase.</p>
-
-        <p>So this is the road before us. We have already seen how ETC handles; now let’s change the oil and what make him purr…</p>
+        <p>Finalmente, si este archivo <code>MIDI-Channel.txt</code> es borrado o no es legible, el ETC usar&aacute; por defecto el canal MIDI 1 cuando se inicialice.</p>
 
         <hr>
+        <h1 id="Chapter_Four:_Programming_For_ETC,_and_Access_via_Wi-Fi">Cap&iacute;tulo cuatro: programando el ETC y acceso v&iacute;a Wi-Fi</h1>
 
-        <h2 id="How_Mode_Scripts_Work">Funcionamiento de los scripts de Mode</h2>
+        <h3>Para aquellos con un editor de texto y un sue&ntilde;o.</h3>
+
+        <p>Bueno, aqu&iacute; estamos. El lugar donde los sue&ntilde;os y/o los modos del ETC son hechos realidad.</p>
+
+        <p>Primero que todo, este cap&oicute;tulo puede que no sea para ti. Si se nos permite decirlo, el ETC es funcional y expresivo sin necesidad de programarlo. Entonces si te sientes c&oacute;modo usando tu ETC y prefieres quedarte con el lado art&iacute;stico de tu cerebro, est&aacute; bien. Enf&oacute;cate en lo que te va a traer m&aacute;s beneficios, y qu&eacute;date en paz. Si alguna vez quieres volver, estaremos aqu&iacute;. Esper&aacute;ndote.</p>
+
+        <p>Aunque este cap&iacute;tulo se enfoca en c&oacute;mo el ETC funciona y los m&eacute;todos disponibles para ti dentro de este ambiente de desarrollo, no te vamos a ense&ntilde;ar a programar. No tenemos ni las p&aacute;ginas ni el Red Bull suficiente para hacerlo aqu&iacute;. Pero no desesperes. Ahora m&aacute;s que nunca, existe una abundancia de recursos disponibles que te ayudar&aacute;n a aprender sobre programaci&oacute;n en general y sobre lenguajes en particular (como <strong>Python</strong>). Revisar en internet, la biblioteca o incluso clases de computacion en tu barrio te dar&aacute;n una buena partid inicial y te ayudar&aacute;n en encontrar una manera de empezar a programar.</p>
+
+        <p>Ahora, si ya te gusta programar (o lo est&aacute;s considerando), o si tienes varias ideas en video que necesitas expresar, prosigamos. Tira de la palanca y revisemos el interior de la carrocer&iacute;a.</p>
+
+        <p>En este cap&iacute;tulo, empezaremos con los conceptos y los requisitos de cualquier modo del ETC. Cada modo no requiere mucho, pero hablar de lo que s&iacute; necesita nos da una buena idea sobre c&oacute;mo opera el ETC. Despu&eacute;s describiremos la interfaz de programacion de aplicaciones (API, por application program interface). M&aacute;s all&aacute; de las partes requeridas, estas son las funciones y propiedades disponibles que puedes usar en cualquier modo. Finalmente, revisaremos c&oacute;mo conectar el ETC con el prop&oacute;sito de editar modos directamente mientras el dispositivo est&aacute; corriendo. Esto puede ser hecho a trav&eacute;s de la interfaz USB Wi-Fi, que se puede comprar de forma adicional.</p>
+
+        <p>Este es el camino que recorreremos. Ya vimos como el ETC se comporta; ahora cambiemosle el aceite y hagamoslo ronronear…</p>
+
+        <hr>
+
+        <h2 id="How_Mode_Scripts_Work">Funcionamiento de los scripts de modo</h2>
+
+        HEREIAM
 
         <p>A word or two on how ETC actually does its work will go a long way. We will spend a moment on the languages at play and the system behavior of ETC, and then we will talk about the basic requirements of a mode.</p>
 
-        <h4>Python, Pygame, and ETC</h4>
+        <h4>Python, Pygame, y ETC</h4>
 
         <p>As was said early on, ETC’s modes are written in <strong>Python</strong> using the graphics library of <strong>Pygame</strong>. So <strong>Python</strong> is the programming language in use, and the graphics library executing the drawing comes from <strong>Pygame</strong>.</p>
 
