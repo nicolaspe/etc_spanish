@@ -575,10 +575,10 @@ Scenes.csv
 
         <ul>
           <li>N&uacute;mero de controlador <code>21</code> &gt; <em>Perilla de control de primer plano 1</em></li>
-          <li>N&uacute;mero de controlador <code>22</code> &gt; <em>Perilla de control de primer plano 2</li>
-          <li>N&uacute;mero de controlador <code>23</code> &gt; <em>Perilla de control de primer plano 3</li>
-          <li>N&uacute;mero de controlador <code>24</code> &gt; <em>Perilla de control de primer plano 4</li>
-          <li>N&uacute;mero de controlador <code>25</code> &gt; <em>Perilla de color de fondo</em>(Background Color)</li>
+          <li>N&uacute;mero de controlador <code>22</code> &gt; <em>Perilla de control de primer plano 2</em></li>
+          <li>N&uacute;mero de controlador <code>23</code> &gt; <em>Perilla de control de primer plano 3</em></li>
+          <li>N&uacute;mero de controlador <code>24</code> &gt; <em>Perilla de control de primer plano 4</em></li>
+          <li>N&uacute;mero de controlador <code>25</code> &gt; <em>Perilla de color de fondo (Background Color)</em></li>
         </ul>
 
         <p>Cada valor de mensaje entrante reemplaza el valor actual del controlador respectivo. Entonces incluso si la perilla de primer plano 2 esta lo m&aacute;s a la derecha, un mensaje entrante de controlador de n&uacute;mero <code>22</code> con un valor <code>0</code> cambiar&aacute; el valor del controlador de primer plano 2 a cero. Cuando muevas de nuevo la perilla de <em>control de primer plano 2</em>, se restaurar&aacute; el control.</p>
@@ -635,7 +635,7 @@ Scenes.csv
 
         <p>En este cap&iacute;tulo, empezaremos con los conceptos y los requisitos de cualquier modo del ETC. Cada modo no requiere mucho, pero hablar de lo que s&iacute; necesita nos da una buena idea sobre c&oacute;mo opera el ETC. Despu&eacute;s describiremos la interfaz de programacion de aplicaciones (API, por application program interface). M&aacute;s all&aacute; de las partes requeridas, estas son las funciones y propiedades disponibles que puedes usar en cualquier modo. Finalmente, revisaremos c&oacute;mo conectar el ETC con el prop&oacute;sito de editar modos directamente mientras el dispositivo est&aacute; corriendo. Esto puede ser hecho a trav&eacute;s de la interfaz USB Wi-Fi, que se puede comprar de forma adicional.</p>
 
-        <p>Este es el camino que recorreremos. Ya vimos como el ETC se comporta; ahora cambiemosle el aceite y hagamoslo ronronear…</p>
+        <p>Este es el camino que recorreremos. Ya vimos c&oacute;mo se comporta el ETC; ahora cambi&eacute;mosle el aceite y hag&aacute;moslo ronronear…</p>
 
         <hr>
 
@@ -643,42 +643,42 @@ Scenes.csv
 
         HEREIAM
 
-        <p>A word or two on how ETC actually does its work will go a long way. We will spend a moment on the languages at play and the system behavior of ETC, and then we will talk about the basic requirements of a mode.</p>
+        <p>Un par de palabras sobre como el ETC realmente hace su trabajo seran muy utiles. Nos tomaremos un momento para hablar sobre los lenguajes en uso y el comportamiento de sistema del ETC, y luego revisaremos los requerimientos basicos de un modo.</p>
 
         <h4>Python, Pygame, y ETC</h4>
 
-        <p>As was said early on, ETC’s modes are written in <strong>Python</strong> using the graphics library of <strong>Pygame</strong>. So <strong>Python</strong> is the programming language in use, and the graphics library executing the drawing comes from <strong>Pygame</strong>.</p>
+        <p>Como dijimos en el principio, los modos del ETC estan escritos en <strong>Python</strong> usando la biblioteca grafica llamada <strong>Pygame</strong>. Entonces, <strong>Python</strong> es el lenguaje de programacion en uso, y la biblioteca ejecutando el dibujo es <strong>Pygame</strong>.</p>
 
-        <p><strong>Python</strong> has a rich standard library with numerous modules, any of which can be used in your modes. A full list of modules can be found in <a href="https://docs.python.org/2/library/">Python’s documentation</a>. Going through the factory modes, you will see such modules as <code>glob</code>, <code>imp</code>, <code>math</code>, <code>random</code>, and <code>time</code> in use. To learn more about how any of the library modules work or more about <strong>Python</strong> itself, the documentation link above is a wonderful place to start.</p>
+        <p><strong>Python</strong> posee una biblioteca estandar rica en numerosos modulos, los que puedes usar en tus modos. Una lista completa de los modulos se encuentra en la<a href="https://docs.python.org/2/library/">documentacion de Python</a>. Revisando los modos de fabrica, veras modulos como <code>glob</code>, <code>imp</code>, <code>math</code>, <code>random</code>, y <code>time</code> en uso. Para aprender mas sobre como cualquiera de los modulos funciona o sobre <strong>Python</strong> en si mismo, el enlace de documentacion de arriba es un maravilloso lugar para empezar.</p>
 
-        <p><strong>Pygame</strong> is a set of <strong>Python</strong> modules that were originally written for video game development. ETC is using the graphics library of <strong>Pygame</strong> to create our visuals. A full list of available modules can be found in <a href="http://www.pygame.org/docs/">Pygame’s documentation</a> under the <em>Reference</em> section. Some of the factory modes make use of additional libraries such as <code>pygame.freetype</code> and <code>pygame.gfxdraw</code>, but other graphics-related modules could be used as well.</p>
+        <p><strong>Pygame</strong> es un conjunto de modulos de <strong>Python</strong> que originalmente fueron escritos para el desarrollo de juegos de video. El ETC usa la biblioteca grafica de <strong>Pygame</strong> para crear nuestras visuales. Una lista completa de todos los modulos disponibles puede ser encontrada en la <a href="http://www.pygame.org/docs/">documentacion de Pygame</a> en la seccion <em>Reference</em> (referencia). Algunos de los modos de fabrica usan bibliotecas adicionales como <code>pygame.freetype</code> y <code>pygame.gfxdraw</code>, y tambien se pueden usar otros modulos relacionados a graficas.</p>
 
-        <p><strong>Pygame</strong> renders its graphical output to a <em>surface</em>. This is how we connect our <strong>Python</strong> scripts to our <strong>Pygame</strong> output, which we will see in the next section.</p>
+        <p><strong>Pygame</strong> hace render de su salida grafica en una <em>superficie</em> (surface). Asi es como conecteamos nuestros scripts de <strong>Python</strong> a nuestra salida de <strong>Pygame</strong>, lo que revisaremos en la siguiente seccion.</p>
 
-        <p>When ETC starts up, it identifies all valid modes within the USB drive’s <code>Modes</code> folder. And it then loads all of these modes simultaneously. This parallel behavior is what makes switching between modes so instantaneous and smooth, but it also adds a couple of things worth considering:</p>
+        <p>Cuando el ETC se enciende, identifica todos los modos validos dentro de la carpeta <code>Modes</code> de la memoria USB. A continuacion, carga todos estos modos de forma simultanea. Este comportamiento en paralelo es lo que que la transicion entre modos sea tan instantanea y suave, pero tambien anade un par de cosas dignas de considerar:</p>
 
         <ul>
-          <li><strong>A memory-intensive mode will always be running.</strong> If you load a mode that requires a significant amount of RAM (say, for loading numerous images during <code>setup()</code>), realize that this memory will be taken up even when another mode is called up and generating output.<br>So if you encounter laggy performance of ETC in general, realize that this could very well be one of your modes hogging memory. One way to troubleshoot this would be to load fewer modes (by moving additional modes out of the <code>Modes</code> folder) during testing.</li>
-          <li><strong>Keep your support files to a minimum.</strong> Again, a good example would be a mode that loads images. We’d advise you to keep the images within a mode folder to 10MB or less. Your mileage will definitely vary, but that is our one-size-fits-all suggestion.<br>Also note that the size of loaded image files could often be optimized. If you download a photo straight from your camera or phone, you’d do well to reduce the resolution to something closer to or below ETC’s output resolution (1280 by 720). As with all rules, there can be exceptions, but there you go.</li>
+          <li><strong>Un modo intensivo en memoria siempre estara corriendo.</strong> Si cargas un modo que requiere una cantidad significativa de RAM (por ejemplo, para cargar muchas imagenes durante <code>setup()</code>), date cuenta de que esta memoria sera usada incluso cuando sea otro el modo que este generando la salida.<br>Entonces si tienes un rendimiento lento del ETC en general, date cuenta de que esto puede estar pasando por un modo que esta usando mucha memoria. Una manera de solucionar esto seria cargar menos modos (moviendo los modos adicionales fuera de la carpeta <code>Modes</code>) mientras haces las pruebas.</li>
+          <li><strong>Manten al minimo tus archivos de soporte.</strong> Una vez mas, un buen ejemplo seria un modo que carga imagenes. Te sugerimos que mantengas las imagenes dentro de un modo en 10 MB o menos. Tu puedes variar esto, pero esa es nuestra sugerencia como primera aproximacion.<br>Tambien observa que el tamano de los archivos de imagenes cargadas a menudo pueden ser optimizados. Si descargas una foto directamente desde tu camara o telefono, es mejor reducir la resolucion a una medida similar a la resolucion de salida del ETC (1280 x 720). Al igual que con todas las reglas, pueden haber excepciones, pero esas son nuestras reglas.</li>
         </ul>
 
-        <h4>Minimum Mode Requirements</h4>
+        <h4>Requerimientos minimos de modo</h4>
 
-        <p>Each mode has only four basic requirements for successfully being loaded and to (hopefully) produce graphical output:</p>
+        <p>Cada modo solo tiene cuatro requerimientos basicos para ser cargado con exito y (ojala) producir salida grafica:</p>
 
         <ol>
-          <li><strong>Load the “pygame” module.</strong> As with any module in <strong>Python</strong>, this is done with a leading <code>import</code> statement. So any ETC mode script should begin with…
+          <li><strong>Cargar el modulo “pygame”.</strong> Como cualquier modulo en <strong>Python</strong>, esto se logra con una instruccion  <code>import</code>. Por esto, todo script de modo de ETC deberia empezar con…
 
             <pre><code>import pygame
 		</code></pre></li>
-          <li><strong>Have a “setup” function (please).</strong> This is actually optional but highly suggested. <code>setup()</code> will get called automatically when the mode is loaded. This is a clean way to run any operations that are only needed once, before video is being rendered.</li>
-          <li><strong>Have a “draw” function.</strong> <code>draw()</code> is the function that is run 30 times per second (think 30 frames per second [fps]) to paint each frame of video output. Common activities here including taking in any control changes since the last frame, redrawing with updated audio information, executing changes based on any trigger or other messages received, etc. etc.<br>Note that code in this block will get hammered so please be a bit parsimonious, only including actions that need to be taken for each and every frame.</li>
-          <li><strong>Route your output to the “screen” surface.</strong> ETC creates a reserved <strong>Pygame</strong> surface called <code>screen</code>. This surface is what gets sent out for display via the HDMI port.</li>
+          <li><strong>Tener una funcion “setup” (por favor).</strong> En realidad esto es opcional pero lo sugerimos fuertemente. <code>setup()</code> sera llamado automaticamente cuando se cargue el modo. Esta es una manera limpia de correr cualquier operacion que solo se necesita una vez, antes de que el video sea renderizado.</li>
+          <li><strong>Tener una funcion “draw”.</strong> <code>draw()</code> es la funcion que se ejecuta 30 veces por segundo (piensa en 30 cuadros por segundo) para pintar cada cuadro de salida de video. Algunas actividades comunes dentro de <code>draw()</code> incluyen recibir cualquier cambio de controlador desde el cuadro anterior, redibujar con informacion actualizada de audio, ejecutar cambios basados en cualquier mensaje gatillo, etc. etc.<br>Observa que el codigo dentro de este bloque sera ejecutado constantemente asi que por favor se misericordioso, y solo incluye acciones que necesitan ser realizadas en cada cuadro.</li>
+          <li><strong>Dirige tu salida a la superficie “screen” (pantalla).</strong> El ETC crea una superficie de <strong>Pygame</strong> reservada llamada <code>screen</code>. Esta superficie es lo que se envia a la pantalla a traves del puerto HDMI.</li>
         </ol>
 
-        <h4>A Simple Mode Example</h4>
+        <h4>Un ejemplo simple de modo</h4>
 
-        <p>Taking all of these points into consideration, here is a very simple example ETC mode…</p>
+        <p>Tomando todos estos puntos en consideracion, aqui tenemos un ejemplo muy simple de un modo del ETC…</p>
 
         <pre><code>import pygame
 
@@ -692,58 +692,60 @@ def draw(screen, etc):
 	pygame.draw.circle(screen, color, position, size, 0)
 </code></pre>
 
-        <p>Walking through this basic <code>main.py</code> example, we start by loading the <code>pygame</code> module, as outlined above in step one. We then define a <code>setup()</code> function. This one is blank, but it is good to have as a placeholder for use when necessary.</p>
+        <p>Revisando este ejemplo basico de <code>main.py</code>, empezamos cargando el modulo<code>pygame</code>, como se describio en el paso uno de arriba. Luego definimos una funcion <code>setup()</code>. Esta en blanco, pero es bueno escribirla por si es necesaria mas adelante.</p>
 
-        <p>Next comes the <code>draw()</code> function. The first three lines of the function are defining local variables that are used in calling the <code>pygame.draw.circle()</code> function. And as the first argument in the example indicates, this function is pointing at the <code>screen</code> surface, getting our draw messages out of ETC through the HDMI output port.</p>
+        <p>A continuacion viene la funcion <code>draw()</code>. Las primeras tres lineas de la funcion estan definiendo variables localas usadas cuando se llama a la funcion <code>pygame.draw.circle()</code>. Y como lo indica el primer argumento del ejemplo, esta funcion esta apuntando a la superficie <code>screen</code>, haciendo que nuestros mensajes de dibujo salgan del ETC a traves del puerto HDMI.</p>
 
-        <p>That is about the simplest mode we could make, and its result is equally simple — a red circle is drawn near the middle of the screen, each and every frame, forever. This example offers the basic framework for examining the factory modes and for understanding how to structure your own modes. Our only suggestion is an obvious one: you should probably send different images out of ETC from time to time.</p>
+        <p>Este es el modo mas simple que podemos crear, y su resultado tambien es simple — se dibuja un circulo rojo cerca de la mitad de la pantalla, en cada cuadro, para siempre. Este ejemplo ofrece una referencia para eximar los modos de fabrica y para entender como estructurar tus propios modos. Nuestra unica sugerencia es obvia: quizas debieras de vez en cuando enviar distinas imagenes distintas fuera del ETC.</p>
 
         <hr>
 
         <h2 id="ETC’s_API">API del ETC</h2>
 
-        <p>Having walked through the general framework and requirements of ETC’s modes, it’s time to take a look at the API available when working with ETC. The <code>etc</code> object contains a number of variables, all of which can be accessed from any mode:</p>
+        HEREIAM
+
+        <p>Habiendo recorrido el esquema general y los requerimientos de los modos del ETC, es hora de revisar la API disponible para el trabajo con el ETC. El objeto <code>etc</code> contiene un numero de variables, las que pueden ser accedidas desde cualquier modo:</p>
 
         <ul>
-          <li><code>etc.audio_in</code> - A <em>list</em> of the 100 most recent audio levels registered by ETC. These values are stored as 16-bit, signed integers, ranging from a minimum of -32,768 to a maximum of +32,767.<br>Additionally, depressing the <em>Trigger</em> button populates this list with a sine wave, simulating audio input to ETC.</li>
-          <li><code>etc.audio_trig</code> - A <em>boolean</em> value indicating whether or not incoming audio has exceeded the fixed threshold level (approximately 80% of maximum) since the last frame was drawn via the <code>draw()</code>function.<br>Additionally, depressing the <em>Trigger</em> button sets <code>etc.audio_trig</code> to <code>true</code>.</li>
-          <li><code>etc.bg_color</code> - A <em>tuple</em> of three integers representing the red, green, and blue components of the current background color.</li>
-          <li><code>etc.knob1</code> - A <em>float</em> representing the current value of the <em>Foreground 1 Control</em> knob. <br>Additionally, an incoming MIDI control change message of number <code>21</code> on the current global MIDI channel will replace the value of foreground knob 1, until the knob is moved again.</li>
-          <li><code>etc.knob2</code> - A <em>float</em> representing the current value of the <em>Foreground 2 Control</em> knob. <br>Additionally, an incoming MIDI control change message of number <code>22</code> on the current global MIDI channel will replace the value of foreground knob 2, until the knob is moved again.</li>
-          <li><code>etc.knob3</code> - A <em>float</em> representing the current value of the <em>Foreground 3 Control</em> knob. <br>Additionally, an incoming MIDI control change message of number <code>23</code> on the current global MIDI channel will replace the value of foreground knob 3, until the knob is moved again.</li>
-          <li><code>etc.knob4</code> - A <em>float</em> representing the current value of the <em>Foreground 4 Control</em> knob. <br>Additionally, an incoming MIDI control change message of number <code>24</code> on the current global MIDI channel will replace the value of foreground knob 4, until the knob is moved again.</li>
-          <li><code>etc.lastgrab</code> - A <strong>Pygame</strong> <em>surface</em> that contains an image of the last taken screenshot taken (via the <em>Screenshot</em> button). This surface has dimensions of 1280 by 720, matching the full size of the screenshot.</li>
-          <li><code>etc.lastgrab_thumb</code> - A <strong>Pygame</strong> <em>surface</em> that contains a thumbnail image of the last taken screenshot taken (via the <em>Screenshot</em> button). This surface has dimensions of 128 by 72.</li>
-          <li><code>etc.midi_notes</code> - A <em>list</em> representing the 128 various MIDI note pitches. Each value in this list indicates whether that note is current on or not. For example, you could create a threshold function that executes when “middle C” (MIDI note 60) is being held down with something like…</li>
+          <li><code>etc.audio_in</code> - Una <em>lista</em> de los 100 niveles de audio mas recientes registrados por el ETC. Estos valores son almacenados como enteros son signo en 16 bits, con un rango entre -32,768 y +32,767.<br>Adicionalmente, cuando se presiona el boton <em>Trigger</em> se pueble esta lista con una onda sinusoidal, simulando una entrada de audio al ETC.</li>
+          <li><code>etc.audio_trig</code> - Un valor <em>boolean</em> que indica si el audio entrante ha excedido o no el nivel de umbral fijado (aproximadamente el 80% del maximo) desde que se dibujo el ultimo cuadro con la funcion <code>draw()</code>.<br>Adicionalmente, presionar el boton <em>Trigger</em> hace que <code>etc.audio_trig</code> sea <code>true</code>.</li>
+          <li><code>etc.bg_color</code> - Una <em>tupla</em> de tres enteros que representan los componentes rojo, verde y azul del color de fondo actual.</li>
+          <li><code>etc.knob1</code> - Un <em>float</em> que representa el valor actual de la perilla <em>Control de primer plano 1</em>. <br>Adicionalmente, un mensaje MIDI entrante de control de cambio numero <code>21</code> en el canal MIDI global actual reemplazara el valor de la perilla de primer plano 1, hasta que se vuelva a mover la perilla.</li>
+          <li><code>etc.knob2</code> - Un <em>float</em> que representa el valor actual de la perilla <em>Control de primer plano 2</em>. <br>Adicionalmente, un mensaje MIDI entrante de control de cambio numero <code>22</code> en el canal MIDI global actual reemplazara el valor de la perilla de primer plano 2, hasta que se vuelva a mover la perilla.</li>
+          <li><code>etc.knob3</code> - Un <em>float</em> que representa el valor actual de la perilla <em>Control de primer plano 3</em>. <br>Adicionalmente, un mensaje MIDI entrante de control de cambio numero <code>23</code> en el canal MIDI global actual reemplazara el valor de la perilla de primer plano 3, hasta que se vuelva a mover la perilla.</li>
+          <li><code>etc.knob4</code> - Un <em>float</em> que representa el valor actual de la perilla <em>Control de primer plano 4</em>. <br>Adicionalmente, un mensaje MIDI entrante de control de cambio numero <code>24</code> en el canal MIDI global actual reemplazara el valor de la perilla de primer plano 4, hasta que se vuelva a mover la perilla.</li>
+          <li><code>etc.lastgrab</code> - Una <em>surface</em> de <strong>Pygame</strong> que contiene una imagen de la ultima captura de pantalla tomada (a traves del boton <em>Screenshot</em>). Esta superficie tiene dimensiones de 1280 por 720, coincidente con el tamano completo de la captura de pantalla.</li>
+          <li><code>etc.lastgrab_thumb</code> - Una <em>surface</em> de <strong>Pygame</strong> que contiene una imagen en miniatura de la ultima captura de pantalla tomada (a traves del boton <em>Screenshot</em>). Esta superficie tiene dimensiones 128 por 72.</li>
+          <li><code>etc.midi_notes</code> - Una <em>lista</em> que represnta las 128 alturas de nota MIDI. Cada valor en la lista indica si la tecla esta encendida o no. Por ejemplo, puedes crear una funcion de umbral que se ejecuta cuando el "Do central" (nota MIDI 60) esta siendo presionado, con algo como…</li>
         </ul>
 
-        <pre><code>if etc.midi_notes[60] : yourFunctionHere()
+        <pre><code>if etc.midi_notes[60] : tuFuncionAqui()
 </code></pre>
 
         <ul>
-          <li><code>etc.midi_note_new</code> - A <em>boolean</em> value indicating whether or not at least one new MIDI note on message was received since the last frame was drawn (via the <code>draw()</code>function).</li>
-          <li><code>etc.midi_clk</code> - An <em>integer</em> representing ETC’s internal MIDI clock. As explained in chapter three, this is an implementation of MIDI’s <em>real-time messages</em>. The <code>etc.midi_clk</code> value starts at <code>1</code> and increments each time a <em> timing clock</em> message is received. After the counter reaches its maximum value of <code>24</code> (or whenever a real-time <em>start</em> message is received), the counter will reset on the next tick to <code>1</code>.<br>If these MIDI messages are transmitted to ETC in rhythmical time, your mode could trigger activity on specified beats. For example, if you were to send real-time messages at the standard rate of 24 ticks per quarter note, you could use a trigger function like this to act on each sixteenth note…</li>
+          <li><code>etc.midi_note_new</code> - Un valor <em>boolean</em> que indica si ha habido o no un nuevi mensaje de encendido de nota MIDI desde que se dibujo el ultimo cuadro (a traves de la funcion <code>draw()</code>).</li>
+          <li><code>etc.midi_clk</code> - Un <em>entero</em> que representa el reloj MIDI interno del ETC. Como se explico en el capitulo tres, esto es una implementacion de <em>mensajes MIDI en tiempo real</em>. El valor <code>etc.midi_clk</code> empieza en <code>1</code> y se incrementa cada vez que se recibe un mensaje de <em> temporizacion de reloj</em> (timing clock). Despues de que el contador alcanza su valor maximo de <code>24</code> (o cada vez que se recibe un mensaje en tiempo real de <em>start</em> (comienzo)), el contador vuelva en el siguiente momento (tick) a <code>1</code>.<br>Si estos mensajes MIDI son trasnmitidos al ETC de forma ritmica, tu modo puede gatillar eventos en momentos especificos. Por ejemplo, si envias mensajes de tiempo real en la tasa estandar de 24 ticks por nota negra, puedes usar una funcion gatillo como esta que actue en cada nota semicorchea…</li>
         </ul>
 
-        <pre><code>if (((etc.midi_clk-1)%6)==0) : yourFunctionHere()
+        <pre><code>if (((etc.midi_clk-1)%6)==0) : tuFuncionAqui()
 </code></pre>
 
         <ul>
-          <li><code>etc.mode</code> - A <em>string</em> of the current mode’s name.</li>
-          <li><code>etc.mode_root</code> - A <em>string</em> of the file path to the current mode’s folder. This will return something like <code>/USBdriveName/Modes/CurrentModeFolder</code>. This can be useful when images, fonts, or other resources need to be loaded from the mode’s folder. (The <code>setup()</code> function would be an appropriate place to do this.)</li>
+          <li><code>etc.mode</code> - Un <em>string</em> que contiene el nombre del modo actual.</li>
+          <li><code>etc.mode_root</code> - Un <em>string</em> que contiene la ruta de archivo de la carpeta del modo actual. Esto retorna algo del estilo <code>/nombreMemoriaUSB/Modes/CarpetaModoActual</code>. Esto puede ser util cuando se cargan imagenes, fuentes y otros recursos desde la carpeta del modo. (La funcion <code>setup()</code> seria un lugar apropiado para hacerlo.)</li>
         </ul>
 
-        <p>Along with all of these variables, the <code>etc</code> object does have one function worth mentioning as well:</p>
+        <p>Ademas de todas estas variables, el objeto <code>etc</code> posee una funcion tambien digna de mencionar:</p>
 
         <ul>
-          <li><code>etc.color_picker()</code> - This function translates the value of the <em>Foreground 4 Control</em> knob into a color. When called, this function returns a <em>tuple</em> of three integers representing the red, green, and blue components of this color. In the factory modes, you will often see a local variable (usually <code>color</code>) being set by this function, like so…<br><code>color = etc.color_picker()</code><br>The idea here is that you can easily set a foreground color based on foreground knob 4. Then when you switch between modes that are using this mapping, the foreground (and background) color will be consistent, making transitions more fluid.</li>
+          <li><code>etc.color_picker()</code> - Esta funcion traduce el valor de la perilla <em>Control de primer plano 4</em> en un color. Cuando es ejecutada, esta funcion retorna una <em>tupla</em> de tres enteros representando los componentes rojo, verde y azul de este color. En los modos de fabrica, a menudo veras una variable local (usualmente <code>color</code>) siendo definida por esta funcion, asi…<br><code>color = etc.color_picker()</code><br>La idea aqui es que puedas facilmente definir un color de primer plano basado en la perilla de primer plano 4. Luego cuando cambias entre modos que usan este mapeo, el color de primer plano (y de fondo) permanece consistente, haciendo que las transiciones sean mas fluidas.</li>
         </ul>
 
-        <p>This represents the API components that are available to you, the aspiring ETC mode editor/writer. Remember that for any variable whose value is based on a hardware controller, changing scenes may override the value in use for a time (for more information on scenes, see chapter two). And since the <code>draw()</code> function is called for each and every video frame produced, querying any of the variables within the <code>draw()</code> function is an effective way to dynamically update your mode’s output.</p>
+        <p>Esto representa los componentes de la API que estan disponibles para ti, un aspirante a escritor/editor de modos de ETC. Recuerda que cualquier variable cuyo balor  este basado en un controlador del hardware, cambiar escenas puede sobreescribir el valor en uso por un momento (para mas informacion sobre escenas, revisa el capitulo dos). Y como la funcion <code>draw()</code> es ejecutada en cada cuadro de video producido, llamar a cualquier variable dentro de la funcion <code>draw()</code> es una forma efectiva de actualizar dinamicamente la salida de tu modo.</p>
 
-        <p>Finally, we are not telling you how to make modes. We aren’t telling you what is a good idea, and even our mode categories (scope versus trigger) admit to being limited. This is where you and your ideas come in.</p>
+        <p>Finalmente, no te estamos diciendo como hacer modos. No te estamos diciendo que es una buena idea, e incluso admitimos que nuestras categorias de modos (visor versus gatillo) son limitadas. Aqui es donde entras tu y tus ideas.</p>
 
-        <p>We leave it to you to have a working knowledge of <strong>Python</strong>, to come up with some ideas for tweaks or completely new modes, and to try and make it work. Even if you don’t nail it the first time, chances are you will come across some happy accidents as you go. As always, it’s along the way that art gets made.</p>
+        <p>Te dejamos a ti el aprender a trabajar en <strong>Python</strong>, que se te ocurren ideas sobre como modificar modos o crear nuevos, y probarlos y hacer que funcionen. Incluso si no lo logras la primera vez, existen posibilidades de que tengas algunos accidentes afortunados en tu camino. Como siempre, el arte se hace sobre la marcha.</p>
 
         <hr>
 
