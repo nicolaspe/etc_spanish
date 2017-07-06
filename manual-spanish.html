@@ -641,44 +641,42 @@ Scenes.csv
 
         <h2 id="How_Mode_Scripts_Work">Funcionamiento de los scripts de modo</h2>
 
-        HEREIAM
-
-        <p>Un par de palabras sobre como el ETC realmente hace su trabajo seran muy utiles. Nos tomaremos un momento para hablar sobre los lenguajes en uso y el comportamiento de sistema del ETC, y luego revisaremos los requerimientos basicos de un modo.</p>
+        <p>Un par de palabras sobre c&oacute;mo el ETC realmente hace su trabajo ser&aacute;n muy &uacute;tiles. Nos tomaremos un momento para hablar sobre los lenguajes en uso y el comportamiento de sistema del ETC, y luego revisaremos los requerimientos b&aacute;sicos de un modo.</p>
 
         <h4>Python, Pygame, y ETC</h4>
 
-        <p>Como dijimos en el principio, los modos del ETC estan escritos en <strong>Python</strong> usando la biblioteca grafica llamada <strong>Pygame</strong>. Entonces, <strong>Python</strong> es el lenguaje de programacion en uso, y la biblioteca ejecutando el dibujo es <strong>Pygame</strong>.</p>
+        <p>Como dijimos en el principio, los modos del ETC est&aacute;n escritos en <strong>Python</strong> usando la biblioteca gr&aacute;fica llamada <strong>Pygame</strong>. Entonces, <strong>Python</strong> es el lenguaje de programaci&oacute;n en uso, y la biblioteca ejecutando el dibujo es <strong>Pygame</strong>.</p>
 
-        <p><strong>Python</strong> posee una biblioteca estandar rica en numerosos modulos, los que puedes usar en tus modos. Una lista completa de los modulos se encuentra en la<a href="https://docs.python.org/2/library/">documentacion de Python</a>. Revisando los modos de fabrica, veras modulos como <code>glob</code>, <code>imp</code>, <code>math</code>, <code>random</code>, y <code>time</code> en uso. Para aprender mas sobre como cualquiera de los modulos funciona o sobre <strong>Python</strong> en si mismo, el enlace de documentacion de arriba es un maravilloso lugar para empezar.</p>
+        <p><strong>Python</strong> posee una biblioteca est&aacute;ndar rica en numerosos m&oacute;dulos, los que puedes usar en tus modos. Una lista completa de los m&oacute;dulos se encuentra en la<a href="https://docs.python.org/2/library/">documentaci&oacute;n de Python</a>. Revisando los modos de f&aacute;brica, ver&aacute;s m&oacute;dulos como <code>glob</code>, <code>imp</code>, <code>math</code>, <code>random</code>, y <code>time</code> en uso. Para aprender m&aacute;s sobre c&oacute;mo cualquiera de los m&oacute;dulos funciona o sobre <strong>Python</strong> en s&iacute; mismo, el enlace de documentaci&oacute;n de arriba es un maravilloso lugar para empezar.</p>
 
-        <p><strong>Pygame</strong> es un conjunto de modulos de <strong>Python</strong> que originalmente fueron escritos para el desarrollo de juegos de video. El ETC usa la biblioteca grafica de <strong>Pygame</strong> para crear nuestras visuales. Una lista completa de todos los modulos disponibles puede ser encontrada en la <a href="http://www.pygame.org/docs/">documentacion de Pygame</a> en la seccion <em>Reference</em> (referencia). Algunos de los modos de fabrica usan bibliotecas adicionales como <code>pygame.freetype</code> y <code>pygame.gfxdraw</code>, y tambien se pueden usar otros modulos relacionados a graficas.</p>
+        <p><strong>Pygame</strong> es un conjunto de m&oacute;dulos de <strong>Python</strong> que originalmente fueron escritos para el desarrollo de juegos de video. El ETC usa la biblioteca gr&aacute;fica de <strong>Pygame</strong> para crear nuestras visuales. Una lista completa de todos los m&oacute;dulos disponibles puede ser encontrada en la <a href="http://www.pygame.org/docs/">documentaci&oacute;n de Pygame</a> en la secci&oacute;n <em>Reference</em> (referencia). Algunos de los modos de f&aacute;brica usan bibliotecas adicionales como <code>pygame.freetype</code> y <code>pygame.gfxdraw</code>, y tambi&eacute;n se pueden usar otros m&oacute;dulos relacionados a gr&aacute;ficas.</p>
 
-        <p><strong>Pygame</strong> hace render de su salida grafica en una <em>superficie</em> (surface). Asi es como conecteamos nuestros scripts de <strong>Python</strong> a nuestra salida de <strong>Pygame</strong>, lo que revisaremos en la siguiente seccion.</p>
+        <p><strong>Pygame</strong> hace render de su salida gr&aacute;fica en una <em>superficie</em> (surface). As&iacute; es como conectamos nuestros scripts de <strong>Python</strong> a nuestra salida de <strong>Pygame</strong>, lo que revisaremos en la siguiente secci&oacute;n.</p>
 
-        <p>Cuando el ETC se enciende, identifica todos los modos validos dentro de la carpeta <code>Modes</code> de la memoria USB. A continuacion, carga todos estos modos de forma simultanea. Este comportamiento en paralelo es lo que que la transicion entre modos sea tan instantanea y suave, pero tambien anade un par de cosas dignas de considerar:</p>
+        <p>Cuando el ETC se enciende, identifica todos los modos v&aacute;lidos dentro de la carpeta <code>Modes</code> de la memoria USB. A continuaci&oacute;n, carga todos estos modos de forma simult&aacute;nea. Este comportamiento en paralelo es lo que hace que la transici&oacute;n entre modos sea tan instant&aacute;nea y suave, pero tambien a&ntilde;ade un par de cosas dignas de considerar:</p>
 
         <ul>
-          <li><strong>Un modo intensivo en memoria siempre estara corriendo.</strong> Si cargas un modo que requiere una cantidad significativa de RAM (por ejemplo, para cargar muchas imagenes durante <code>setup()</code>), date cuenta de que esta memoria sera usada incluso cuando sea otro el modo que este generando la salida.<br>Entonces si tienes un rendimiento lento del ETC en general, date cuenta de que esto puede estar pasando por un modo que esta usando mucha memoria. Una manera de solucionar esto seria cargar menos modos (moviendo los modos adicionales fuera de la carpeta <code>Modes</code>) mientras haces las pruebas.</li>
-          <li><strong>Manten al minimo tus archivos de soporte.</strong> Una vez mas, un buen ejemplo seria un modo que carga imagenes. Te sugerimos que mantengas las imagenes dentro de un modo en 10 MB o menos. Tu puedes variar esto, pero esa es nuestra sugerencia como primera aproximacion.<br>Tambien observa que el tamano de los archivos de imagenes cargadas a menudo pueden ser optimizados. Si descargas una foto directamente desde tu camara o telefono, es mejor reducir la resolucion a una medida similar a la resolucion de salida del ETC (1280 x 720). Al igual que con todas las reglas, pueden haber excepciones, pero esas son nuestras reglas.</li>
+          <li><strong>Un modo intensivo en memoria siempre estar&aacute; corriendo.</strong> Si cargas un modo que requiere una cantidad significativa de RAM (por ejemplo, para cargar muchas im&aacute;genes durante <code>setup()</code>), date cuenta de que esta memoria ser&aacute; usada incluso cuando sea otro el modo que est&eacute; generando la salida.<br>Entonces si tienes un rendimiento lento del ETC en general, date cuenta de que esto puede estar pasando por un modo que est&aacute; usando mucha memoria. Una manera de solucionar esto ser&iacute;a cargar menos modos (moviendo los modos adicionales fuera de la carpeta <code>Modes</code>) mientras haces las pruebas.</li>
+          <li><strong>Mant&eacute;n al m&iacute;nimo tus archivos de soporte.</strong> Una vez m&aacute;s, un buen ejemplo ser&iacute;a un modo que carga im&aacute;genes. Te sugerimos que mantengas las im&aacute;genes en un modo en 10 MB o menos. T&uacute; puedes variar esto, pero esa es nuestra sugerencia como primera aproximaci&oacute;n.<br>Tambi&eacute;n observa que el tama&ntilde;o de los archivos de im&aacute;genes cargadas a menudo pueden ser optimizados. Si descargas una foto directamente desde tu c&aacute;mara o tel&eacute;fono, es mejor reducir la resoluci&oacute;n a una medida similar a la resoluci&oacute;n de salida del ETC (1280 x 720). Al igual que con todas las reglas, pueden haber excepciones, pero esas son nuestras reglas base.</li>
         </ul>
 
-        <h4>Requerimientos minimos de modo</h4>
+        <h4>Requerimientos m&iacute;nimos de modo</h4>
 
-        <p>Cada modo solo tiene cuatro requerimientos basicos para ser cargado con exito y (ojala) producir salida grafica:</p>
+        <p>Cada modo solo tiene cuatro requerimientos b&aacute;sicos para ser cargado con &eacute;xito y (ojal&aacute;) producir salida gr&aacute;fica:</p>
 
         <ol>
-          <li><strong>Cargar el modulo “pygame”.</strong> Como cualquier modulo en <strong>Python</strong>, esto se logra con una instruccion  <code>import</code>. Por esto, todo script de modo de ETC deberia empezar con…
+          <li><strong>Cargar el m&oacute;dulo “pygame”.</strong> Como cualquier m&oacute;dulo en <strong>Python</strong>, esto se logra con una instrucci&oacute;n  <code>import</code>. Por esto, todo script de modo de ETC debe empezar con…
 
             <pre><code>import pygame
 		</code></pre></li>
-          <li><strong>Tener una funcion “setup” (por favor).</strong> En realidad esto es opcional pero lo sugerimos fuertemente. <code>setup()</code> sera llamado automaticamente cuando se cargue el modo. Esta es una manera limpia de correr cualquier operacion que solo se necesita una vez, antes de que el video sea renderizado.</li>
-          <li><strong>Tener una funcion “draw”.</strong> <code>draw()</code> es la funcion que se ejecuta 30 veces por segundo (piensa en 30 cuadros por segundo) para pintar cada cuadro de salida de video. Algunas actividades comunes dentro de <code>draw()</code> incluyen recibir cualquier cambio de controlador desde el cuadro anterior, redibujar con informacion actualizada de audio, ejecutar cambios basados en cualquier mensaje gatillo, etc. etc.<br>Observa que el codigo dentro de este bloque sera ejecutado constantemente asi que por favor se misericordioso, y solo incluye acciones que necesitan ser realizadas en cada cuadro.</li>
-          <li><strong>Dirige tu salida a la superficie “screen” (pantalla).</strong> El ETC crea una superficie de <strong>Pygame</strong> reservada llamada <code>screen</code>. Esta superficie es lo que se envia a la pantalla a traves del puerto HDMI.</li>
+          <li><strong>Tener una funci&oacute;n “setup” (por favor).</strong> En realidad esto es opcional pero lo sugerimos fuertemente. <code>setup()</code> ser&aacute; llamado autom&aacute;ticamente cuando se cargue el modo. Esta es una manera limpia de correr cualquier operaci&oacute;n que solo se necesita una vez, antes de que el video sea renderizado.</li>
+          <li><strong>Tener una funci&oacute;n “draw”.</strong> <code>draw()</code> es la funci&oacute;n que se ejecuta 30 veces por segundo (piensa en 30 cuadros por segundo) para pintar cada cuadro de salida de video. Algunas actividades comunes dentro de <code>draw()</code> incluyen recibir cualquier cambio de controlador desde el cuadro anterior, redibujar con informaci&oacute;n actualizada de audio, ejecutar cambios basados en cualquier mensaje gatillo, etc. etc.<br>Observa que el c&oacute;digo dentro de este bloque ser&aacute; ejecutado constantemente as&iacute; que por favor s&eacute; misericordioso, y solo incluye acciones que necesitan ser realizadas en cada cuadro.</li>
+          <li><strong>Dirige tu salida a la superficie “screen” (pantalla).</strong> El ETC crea una superficie de <strong>Pygame</strong> reservada llamada <code>screen</code>. Esta superficie es lo que se envia a la pantalla a trav&eacute;s del puerto HDMI.</li>
         </ol>
 
         <h4>Un ejemplo simple de modo</h4>
 
-        <p>Tomando todos estos puntos en consideracion, aqui tenemos un ejemplo muy simple de un modo del ETC…</p>
+        <p>Tomando todos estos puntos en consideraci&oacute;n, aqu&iacute; tenemos un ejemplo muy simple de un modo del ETC…</p>
 
         <pre><code>import pygame
 
@@ -692,11 +690,11 @@ def draw(screen, etc):
 	pygame.draw.circle(screen, color, position, size, 0)
 </code></pre>
 
-        <p>Revisando este ejemplo basico de <code>main.py</code>, empezamos cargando el modulo<code>pygame</code>, como se describio en el paso uno de arriba. Luego definimos una funcion <code>setup()</code>. Esta en blanco, pero es bueno escribirla por si es necesaria mas adelante.</p>
+        <p>Revisando este ejemplo b&aacute;sico de <code>main.py</code>, empezamos cargando el m&oacute;dulo <code>pygame</code>, como se describi&oacute; en el paso uno de arriba. Luego definimos una funci&oacute;n <code>setup()</code>. Est&aacute; en blanco, pero es bueno escribirla por si es necesaria mas adelante.</p>
 
-        <p>A continuacion viene la funcion <code>draw()</code>. Las primeras tres lineas de la funcion estan definiendo variables localas usadas cuando se llama a la funcion <code>pygame.draw.circle()</code>. Y como lo indica el primer argumento del ejemplo, esta funcion esta apuntando a la superficie <code>screen</code>, haciendo que nuestros mensajes de dibujo salgan del ETC a traves del puerto HDMI.</p>
+        <p>A continuaci&oacute;n viene la funci&oacute;n <code>draw()</code>. Las primeras tres l&iacute;neas de la funci&oacute;n est&aacute;n definiendo variables locales usadas cuando se llama a la funci&oacute;n <code>pygame.draw.circle()</code>. Y como lo indica el primer argumento del ejemplo, esta funci&oacute;n est&aacute; apuntando a la superficie <code>screen</code>, haciendo que nuestros mensajes de dibujo salgan del ETC a trav&eacute;s del puerto HDMI.</p>
 
-        <p>Este es el modo mas simple que podemos crear, y su resultado tambien es simple — se dibuja un circulo rojo cerca de la mitad de la pantalla, en cada cuadro, para siempre. Este ejemplo ofrece una referencia para eximar los modos de fabrica y para entender como estructurar tus propios modos. Nuestra unica sugerencia es obvia: quizas debieras de vez en cuando enviar distinas imagenes distintas fuera del ETC.</p>
+        <p>Este es el modo m&aacute;s simple que podemos crear, y su resultado tambi&eacute;n es simple — se dibuja un c&iacute;rculo rojo cerca de la mitad de la pantalla, en cada cuadro, para siempre. Este ejemplo ofrece una referencia para examinar los modos de f&aacute;brica y para entender c&oacute;mo estructurar tus propios modos. Nuestra &uacute;nica sugerencia es obvia: quiz&aacute;s debieras de vez en cuando enviar distinas imagenes distintas fuera del ETC.</p>
 
         <hr>
 
@@ -704,27 +702,27 @@ def draw(screen, etc):
 
         HEREIAM
 
-        <p>Habiendo recorrido el esquema general y los requerimientos de los modos del ETC, es hora de revisar la API disponible para el trabajo con el ETC. El objeto <code>etc</code> contiene un numero de variables, las que pueden ser accedidas desde cualquier modo:</p>
+        <p>Habiendo recorrido el esquema general y los requerimientos de los modos del ETC, es hora de revisar la API disponible para el trabajo con el ETC. El objeto <code>etc</code> contiene un n&uacute;mero de variables, las que pueden ser accedidas desde cualquier modo:</p>
 
         <ul>
-          <li><code>etc.audio_in</code> - Una <em>lista</em> de los 100 niveles de audio mas recientes registrados por el ETC. Estos valores son almacenados como enteros son signo en 16 bits, con un rango entre -32,768 y +32,767.<br>Adicionalmente, cuando se presiona el boton <em>Trigger</em> se pueble esta lista con una onda sinusoidal, simulando una entrada de audio al ETC.</li>
-          <li><code>etc.audio_trig</code> - Un valor <em>boolean</em> que indica si el audio entrante ha excedido o no el nivel de umbral fijado (aproximadamente el 80% del maximo) desde que se dibujo el ultimo cuadro con la funcion <code>draw()</code>.<br>Adicionalmente, presionar el boton <em>Trigger</em> hace que <code>etc.audio_trig</code> sea <code>true</code>.</li>
+          <li><code>etc.audio_in</code> - Una <em>lista</em> de los 100 niveles de audio m&aacute;s recientes registrados por el ETC. Estos valores son almacenados como enteros con signo en 16 bits, con un rango entre -32,768 y +32,767.<br>Adicionalmente, cuando se presiona el bot&oacute;n <em>Trigger</em> se puebla esta lista con una onda sinusoidal, simulando una entrada de audio al ETC.</li>
+          <li><code>etc.audio_trig</code> - Un valor <em>boolean</em> que indica si el audio entrante ha excedido o no el nivel de umbral fijado (aproximadamente el 80% del m&aacute;ximo) desde que se dibuj&oacute; el &uacute;ltimo cuadro con la funci&oacute;n <code>draw()</code>.<br>Adicionalmente, presionar el bot&oacute;n <em>Trigger</em> hace que <code>etc.audio_trig</code> sea <code>true</code>.</li>
           <li><code>etc.bg_color</code> - Una <em>tupla</em> de tres enteros que representan los componentes rojo, verde y azul del color de fondo actual.</li>
-          <li><code>etc.knob1</code> - Un <em>float</em> que representa el valor actual de la perilla <em>Control de primer plano 1</em>. <br>Adicionalmente, un mensaje MIDI entrante de control de cambio numero <code>21</code> en el canal MIDI global actual reemplazara el valor de la perilla de primer plano 1, hasta que se vuelva a mover la perilla.</li>
-          <li><code>etc.knob2</code> - Un <em>float</em> que representa el valor actual de la perilla <em>Control de primer plano 2</em>. <br>Adicionalmente, un mensaje MIDI entrante de control de cambio numero <code>22</code> en el canal MIDI global actual reemplazara el valor de la perilla de primer plano 2, hasta que se vuelva a mover la perilla.</li>
-          <li><code>etc.knob3</code> - Un <em>float</em> que representa el valor actual de la perilla <em>Control de primer plano 3</em>. <br>Adicionalmente, un mensaje MIDI entrante de control de cambio numero <code>23</code> en el canal MIDI global actual reemplazara el valor de la perilla de primer plano 3, hasta que se vuelva a mover la perilla.</li>
-          <li><code>etc.knob4</code> - Un <em>float</em> que representa el valor actual de la perilla <em>Control de primer plano 4</em>. <br>Adicionalmente, un mensaje MIDI entrante de control de cambio numero <code>24</code> en el canal MIDI global actual reemplazara el valor de la perilla de primer plano 4, hasta que se vuelva a mover la perilla.</li>
-          <li><code>etc.lastgrab</code> - Una <em>surface</em> de <strong>Pygame</strong> que contiene una imagen de la ultima captura de pantalla tomada (a traves del boton <em>Screenshot</em>). Esta superficie tiene dimensiones de 1280 por 720, coincidente con el tamano completo de la captura de pantalla.</li>
-          <li><code>etc.lastgrab_thumb</code> - Una <em>surface</em> de <strong>Pygame</strong> que contiene una imagen en miniatura de la ultima captura de pantalla tomada (a traves del boton <em>Screenshot</em>). Esta superficie tiene dimensiones 128 por 72.</li>
-          <li><code>etc.midi_notes</code> - Una <em>lista</em> que represnta las 128 alturas de nota MIDI. Cada valor en la lista indica si la tecla esta encendida o no. Por ejemplo, puedes crear una funcion de umbral que se ejecuta cuando el "Do central" (nota MIDI 60) esta siendo presionado, con algo como…</li>
+          <li><code>etc.knob1</code> - Un <em>float</em> que representa el valor actual de la perilla <em>Control de primer plano 1</em>. <br>Adicionalmente, un mensaje MIDI entrante de control de cambio n&uacute;mero <code>21</code> en el canal MIDI global actual reemplazar&aacute; el valor de la perilla de primer plano 1, hasta que se vuelva a mover la perilla.</li>
+          <li><code>etc.knob2</code> - Un <em>float</em> que representa el valor actual de la perilla <em>Control de primer plano 2</em>. <br>Adicionalmente, un mensaje MIDI entrante de control de cambio n&uacute;mero <code>22</code> en el canal MIDI global actual reemplazar&aacute; el valor de la perilla de primer plano 2, hasta que se vuelva a mover la perilla.</li>
+          <li><code>etc.knob3</code> - Un <em>float</em> que representa el valor actual de la perilla <em>Control de primer plano 3</em>. <br>Adicionalmente, un mensaje MIDI entrante de control de cambio n&uacute;mero <code>23</code> en el canal MIDI global actual reemplazar&aacute; el valor de la perilla de primer plano 3, hasta que se vuelva a mover la perilla.</li>
+          <li><code>etc.knob4</code> - Un <em>float</em> que representa el valor actual de la perilla <em>Control de primer plano 4</em>. <br>Adicionalmente, un mensaje MIDI entrante de control de cambio n&uacute;mero <code>24</code> en el canal MIDI global actual reemplazar&aacute; el valor de la perilla de primer plano 4, hasta que se vuelva a mover la perilla.</li>
+          <li><code>etc.lastgrab</code> - Una <em>surface</em> de <strong>Pygame</strong> que contiene una imagen de la &uacute;ltima captura de pantalla tomada (a traves del bot&oacute;n <em>Screenshot</em>). Esta superficie tiene dimensiones de 1280 por 720, coincidente con el tama&ntilde;o completo de la captura de pantalla.</li>
+          <li><code>etc.lastgrab_thumb</code> - Una <em>surface</em> de <strong>Pygame</strong> que contiene una imagen en miniatura de la &uacute;ltima captura de pantalla tomada (a traves del bot&oacute;n <em>Screenshot</em>). Esta superficie tiene dimensiones 128 por 72.</li>
+          <li><code>etc.midi_notes</code> - Una <em>lista</em> que representa las 128 alturas de nota MIDI. Cada valor en la lista indica si la tecla est&aacute; encendida o no. Por ejemplo, puedes crear una funci&oacute;n de umbral que se ejecuta cuando el "Do central" (nota MIDI 60) est&aacute; siendo presionado, con algo como…</li>
         </ul>
 
         <pre><code>if etc.midi_notes[60] : tuFuncionAqui()
 </code></pre>
 
         <ul>
-          <li><code>etc.midi_note_new</code> - Un valor <em>boolean</em> que indica si ha habido o no un nuevi mensaje de encendido de nota MIDI desde que se dibujo el ultimo cuadro (a traves de la funcion <code>draw()</code>).</li>
-          <li><code>etc.midi_clk</code> - Un <em>entero</em> que representa el reloj MIDI interno del ETC. Como se explico en el capitulo tres, esto es una implementacion de <em>mensajes MIDI en tiempo real</em>. El valor <code>etc.midi_clk</code> empieza en <code>1</code> y se incrementa cada vez que se recibe un mensaje de <em> temporizacion de reloj</em> (timing clock). Despues de que el contador alcanza su valor maximo de <code>24</code> (o cada vez que se recibe un mensaje en tiempo real de <em>start</em> (comienzo)), el contador vuelva en el siguiente momento (tick) a <code>1</code>.<br>Si estos mensajes MIDI son trasnmitidos al ETC de forma ritmica, tu modo puede gatillar eventos en momentos especificos. Por ejemplo, si envias mensajes de tiempo real en la tasa estandar de 24 ticks por nota negra, puedes usar una funcion gatillo como esta que actue en cada nota semicorchea…</li>
+          <li><code>etc.midi_note_new</code> - Un valor <em>boolean</em> que indica si ha habido o no un nuevo mensaje de encendido de nota MIDI desde que se dibuj&oacute; el &uacute;ltimo cuadro (a trav&eacute;s de la funci&oacute;n <code>draw()</code>).</li>
+          <li><code>etc.midi_clk</code> - Un <em>entero</em> que representa el reloj MIDI interno del ETC. Como se explic&oacute; en el cap&iacute;tulo tres, esto es una implementaci&oacute;n de <em>mensajes MIDI en tiempo real</em>. El valor <code>etc.midi_clk</code> empieza en <code>1</code> y se incrementa cada vez que se recibe un mensaje de <em> temporizaci&oacute;n de reloj</em> (timing clock). Despu&eacute;s de que el contador alcanza su valor m&aacute;ximo de <code>24</code> (o cada vez que se recibe un mensaje en tiempo real de <em>start</em> (comienzo)), el contador vuelve en el siguiente momento (tick) a <code>1</code>.<br>Si estos mensajes MIDI son transmitidos al ETC de forma r&iacute;tmica, tu modo puede gatillar eventos en momentos espec&iacute;ficos. Por ejemplo, si env&iacute;as mensajes de tiempo real en la tasa est&aacute;ndar de 24 ticks por nota negra, puedes usar una funci&oacute;n gatillo como esta que act&uacute;e en cada nota semicorchea…</li>
         </ul>
 
         <pre><code>if (((etc.midi_clk-1)%6)==0) : tuFuncionAqui()
@@ -732,75 +730,75 @@ def draw(screen, etc):
 
         <ul>
           <li><code>etc.mode</code> - Un <em>string</em> que contiene el nombre del modo actual.</li>
-          <li><code>etc.mode_root</code> - Un <em>string</em> que contiene la ruta de archivo de la carpeta del modo actual. Esto retorna algo del estilo <code>/nombreMemoriaUSB/Modes/CarpetaModoActual</code>. Esto puede ser util cuando se cargan imagenes, fuentes y otros recursos desde la carpeta del modo. (La funcion <code>setup()</code> seria un lugar apropiado para hacerlo.)</li>
+          <li><code>etc.mode_root</code> - Un <em>string</em> que contiene la ruta de archivo de la carpeta del modo actual. Esto retorna algo del estilo <code>/nombreMemoriaUSB/Modes/CarpetaModoActual</code>. Esto puede ser &uacute;til cuando se cargan im&aacute;genes, fuentes y otros recursos desde la carpeta del modo. (La funci&oacute;n <code>setup()</code> ser&iacute;a un lugar apropiado para hacerlo.)</li>
         </ul>
 
-        <p>Ademas de todas estas variables, el objeto <code>etc</code> posee una funcion tambien digna de mencionar:</p>
+        <p>Adem&aacute;s de todas estas variables, el objeto <code>etc</code> posee una funci&oacute;n tambi&eacute;n digna de mencionar:</p>
 
         <ul>
-          <li><code>etc.color_picker()</code> - Esta funcion traduce el valor de la perilla <em>Control de primer plano 4</em> en un color. Cuando es ejecutada, esta funcion retorna una <em>tupla</em> de tres enteros representando los componentes rojo, verde y azul de este color. En los modos de fabrica, a menudo veras una variable local (usualmente <code>color</code>) siendo definida por esta funcion, asi…<br><code>color = etc.color_picker()</code><br>La idea aqui es que puedas facilmente definir un color de primer plano basado en la perilla de primer plano 4. Luego cuando cambias entre modos que usan este mapeo, el color de primer plano (y de fondo) permanece consistente, haciendo que las transiciones sean mas fluidas.</li>
+          <li><code>etc.color_picker()</code> - Esta funci&oacute;n traduce el valor de la perilla <em>Control de primer plano 4</em> en un color. Cuando es ejecutada, esta funci&oacute;n retorna una <em>tupla</em> de tres enteros representando los componentes rojo, verde y azul de este color. En los modos de f&aacute;brica, a menudo ver&aacute;s una variable local (usualmente <code>color</code>) siendo definida por esta funci&oacute;n, as&iacute;…<br><code>color = etc.color_picker()</code><br>La idea aqu&iacute; es que puedas f&aacute;cilmente definir un color de primer plano basado en la perilla de primer plano 4. Luego cuando cambias entre modos que usan este mapeo, el color de primer plano (y de fondo) permanece consistente, haciendo que las transiciones sean m&aacute;s fluidas.</li>
         </ul>
 
-        <p>Esto representa los componentes de la API que estan disponibles para ti, un aspirante a escritor/editor de modos de ETC. Recuerda que cualquier variable cuyo balor  este basado en un controlador del hardware, cambiar escenas puede sobreescribir el valor en uso por un momento (para mas informacion sobre escenas, revisa el capitulo dos). Y como la funcion <code>draw()</code> es ejecutada en cada cuadro de video producido, llamar a cualquier variable dentro de la funcion <code>draw()</code> es una forma efectiva de actualizar dinamicamente la salida de tu modo.</p>
+        <p>Esto representa los componentes de la API que est&aacute;n disponibles para ti, un aspirante a escritor/editor de modos de ETC. Recuerda que cualquier variable cuyo valor este basado en un controlador del hardware, al cambiar escenas puede sobreescribir el valor en uso por un momento (para m&aacute;s informaci&oacute;n sobre escenas, revisa el cap&iacute;tulo dos). Y como la funci&oacute;n <code>draw()</code> es ejecutada en cada cuadro de video producido, llamar a cualquier variable dentro de la funci&oacute;n <code>draw()</code> es una forma efectiva de actualizar din&aacute;micamente la salida de tu modo.</p>
 
-        <p>Finalmente, no te estamos diciendo como hacer modos. No te estamos diciendo que es una buena idea, e incluso admitimos que nuestras categorias de modos (visor versus gatillo) son limitadas. Aqui es donde entras tu y tus ideas.</p>
+        <p>Finalmente, no te estamos diciendo c&oacute;mo hacer modos. No te estamos diciendo qu&eacute; es una buena idea, e incluso admitimos que nuestras categor&iacute;as de modos (visor versus gatillo) son limitadas. Aqu&iacute; es donde entras t&uacute; y tus ideas.</p>
 
-        <p>Te dejamos a ti el aprender a trabajar en <strong>Python</strong>, que se te ocurren ideas sobre como modificar modos o crear nuevos, y probarlos y hacer que funcionen. Incluso si no lo logras la primera vez, existen posibilidades de que tengas algunos accidentes afortunados en tu camino. Como siempre, el arte se hace sobre la marcha.</p>
+        <p>Te dejamos a ti el aprender a trabajar en <strong>Python</strong>, que se te ocurran ideas sobre c&oacute;mo modificar modos o crear nuevos, y probarlos y hacer que funcionen. Incluso si la primera vez no lo logras, existen posibilidades de que tengas algunos accidentes afortunados en tu camino. Como siempre, el arte se hace sobre la marcha.</p>
 
         <hr>
 
         <h2 id="Wirelessly_Programming_with_the_USB_Wi-Fi_Interface">Programaci&oacute;n inal&aacute;mbrica con la interfaz USB Wi-Fi</h2>
 
-        <p>En el capitulo tres, revisamos el formato de la memoria USB y tambien como anadir nuevos modos y trabajar con archivos y carpetas conectando la memoria al computador. Ahora que ya estas familiarizado con lo basico sobre construir y editar modos del ETC, puedes simplemente enchufar la memoria USB del ETC en tu computador cada vez que quieras editar o crear nuevos modos. Esto funcionara muy bien…</p>
+        <p>En el capi&iacute;tulo tres, revisamos el formato de la memoria USB y tambi&eacute;n c&oacute;mo a&ntilde;adir nuevos modos y trabajar con archivos y carpetas conectando la memoria al computador. Ahora que ya est&aacute;s familiarizado con lo b&aacute;sico sobre construir y editar modos del ETC, puedes simplemente enchufar la memoria USB del ETC en tu computador cada vez que quieras editar o crear nuevos modos. Esto funcionar&aacute; muy bien…</p>
 
-        <p>Pero esta secuencia de pasos — apagar el ETC, desconectar la memoria USB, conectar la memoria USB a tu computador, encontrar y editar el archivo de interes… — bueno, incluso despues de seis pasos, no serias capaz tdoavia de ver los resultados de tu trabajo. Esto podria ser engorroso para la creacion de modos nuevos desde cero, y tambien para ajustar de forma fina algunas configuraciones. Por esto, ideamos un estilo de trabajo mas conveniente para todos nosotros.</p>
+        <p>Pero esta secuencia de pasos — apagar el ETC, desconectar la memoria USB, conectar la memoria USB a tu computador, encontrar y editar el archivo de inter&eacute;s… — bueno, incluso despu&eacute;s de seis pasos, no ser&iacute;as capaz todav&iacute;a de ver los resultados de tu trabajo. Esto podr&iacute;a ser engorroso para la creaci&oacute;n de modos nuevos desde cero, y tambi&eacute;n para ajustar de forma fina algunas configuraciones. Por esto, ideamos un estilo de trabajo m&aacute;s conveniente para todos nosotros.</p>
 
-        <h4>Preparacion de la interfaz USB Wi-Fi</h4>
+        <h4>Preparaci&oacute;n de la interfaz USB Wi-Fi</h4>
 
-        <p>Para permitir que tu ETC siga corriendo <em>y</em> permitir la edicion de sus scripts principales (los archivos <code>main.py</code> de cada modo), hemos hecho que el ETC este listo para trabajar con una <em>interfaz USB Wi-Fi</em>, que esta disponible como una <a href="https://www.critterandguitari.com/collections/accessories">compra adicional</a>. </p>
+        <p>Para permitir que tu ETC siga corriendo <em>y</em> permitir la edici&oacute;n de sus scripts principales (los archivos <code>main.py</code> de cada modo), hemos hecho que el ETC est&eacute; listo para trabajar con una <em>interfaz USB Wi-Fi</em>, que est&aacute; disponible como una <a href="https://www.critterandguitari.com/collections/accessories">compra adicional</a>. </p>
 
-        <p>El uso de la <em>interfaz USB Wi-Fi</em> con el ETC requiere solo un poco de configuracion. Necesitas crear un archivo llamado <code>WiFi.sh</code> y ubicarlo en el nivel superior de la memoria USB. Este script de shell le indicara al ETC que cree su propia red Wi-Fi con un nombre de red y una clave a tu eleccion. Una plantilla del archivo ser veria asi…</p>
+        <p>El uso de la <em>interfaz USB Wi-Fi</em> con el ETC requiere solo un poco de configuraci&oacute;n. Necesitas crear un archivo llamado <code>WiFi.sh</code> y ubicarlo en el nivel superior de la memoria USB. Este script de shell le indicar&aacute; al ETC que cree su propia red Wi-Fi con un nombre de red y una clave a tu elecci&oacute;n. Una plantilla del archivo ser ver&iacute;a as&iacute;…</p>
 
         <pre><code>#!/bin/bash
 create_ap wlan0 eth0 NOMBRE_RED CLAVE &amp;
 </code></pre>
 
-        <p>(Desde <a href="http://etctv.io/WiFi.sh">este enlace</a>, puedes descargar una version plantilla del archivo <code>WiFi.sh</code>).</p>
+        <p>(Desde <a href="http://etctv.io/WiFi.sh">este enlace</a>, puedes descargar una versi&oacute;n plantilla del archivo <code>WiFi.sh</code>).</p>
 
-        <p>Despues de descargar este archivo o de escribir las dos lineas de arriba en un editor de texto, por favor realiza las siguientes acciones:</p>
+        <p>Despu&eacute;s de descargar este archivo o de escribir las dos l&iacute;neas de arriba en un editor de texto, por favor realiza las siguientes acciones:</p>
 
         <ol>
           <li>Cambia el <code>NOMBRE_RED</code> al nombre de red (lease: SSID) que quieres que el ETC cree.</li>
           <li>Cambia la <code>CLAVE</code> a la clave que quieres que el ETC use para esta red.</li>
-          <li>Graba este archivo con el nombre exacto <code>WiFi.sh</code>. (ASegurate de que tu editor de texto <em>no</em> agrege una extension adicional al final del nombre del archivo, como <code>.txt</code>). ASegurate de grabar una copia de este archivo en el nivel superior de la memoria USB del ETC.</li>
+          <li>Graba este archivo con el nombre exacto <code>WiFi.sh</code>. (Aseg&uacute;rate de que tu editor de texto <em>no</em> agregue una extensi&oacute;n adicional al final del nombre del archivo, como <code>.txt</code>). Aseg&uacute;rate de grabar una copia de este archivo en el nivel superior de la memoria USB del ETC.</li>
           <li>Vuelve a conectar la memoria USB a uno de los puertos USB del ETC, conecta la <em>interfaz USB Wi-Fi</em> al otro puerto USB, y enciende el ETC.</li>
         </ol>
 
-        <p>Una vez que el ETC se haya encendido, deberias ser capaz de encontrar y conectarte a la red de Wi-Fi del ETC, de la misma forma que lo harias con otra red. En el ejemplo de abajo, le he puesto el nombre <code>ETCETC</code> a la red del ETC.</p>
+        <p>Una vez que el ETC se haya encendido, deber&iacute;as ser capaz de encontrar y conectarte a la red de Wi-Fi del ETC, de la misma forma que lo har&iacute;as con otra red. En el ejemplo de abajo, le he puesto el nombre <code>ETCETC</code> a la red del ETC.</p>
 
         <figure><img style="max-width:100%" src="./ETC Manual_files/ETCETC Wi-Fi 1.png"></figure>
 
-        <p>Observa que si estas conectado a internet a traves de Wi-Fi, cambiarte a la red Wi-Fi del ETC te dejara sin conexion a internet. Esto podria limitar tu acceso a recursos en linea, como este manual y el sitio de Critter &amp; Guitari en general. Si es posible, conectarte a internet por otros medios (como un cable de ethernet o Bluetooth) te permitira permanecer en linea mientras estas conectado al ETC.</p>
+        <p>Observa que si est&aacute;s conectado a internet a trav&eacute;s de Wi-Fi, cambiarte a la red Wi-Fi del ETC te dejar&aacute; sin conexi&oacute;n a internet. Esto podr&iacute;a limitar tu acceso a recursos en l&iacute;nea, como este manual y el sitio de Critter &amp; Guitari en general. Si es posible, conectarte a internet por otros medios (como un cable de ethernet o Bluetooth) te permitir&aacute; permanecer en l&iacute;nea mientras est&aacute;s conectado al ETC.</p>
 
-        <h4>Uso de la consla web del ETC</h4>
+        <h4>Uso de la consola web del ETC</h4>
 
-        <p>Una vez que estes conectado a la red Wi-Fi del ETC, abre tu navegador web y visita <a href="http://192.168.12.1:8080/static/index.html">http://192.168.12.1:8080/static/index.html</a>.</p>
+        <p>Una vez que est&eacute;s conectado a la red Wi-Fi del ETC, abre tu navegador web y visita <a href="http://192.168.12.1:8080/static/index.html">http://192.168.12.1:8080/static/index.html</a>.</p>
 
         <figure><img style="max-width:100%" src="./ETC Manual_files/1 - Web panel start.png"></figure>
 
-        <p>Esta es la pagina de inicio de la <em>consola web del ETC</em>. La barra de navegacion simple en la primera linea nos ofrece dos paginas: <code>Editor</code> y <code>Screen Grabs</code> (capturas de pantalla). Estamos por defecto en la pagina <em>Editor</em>, que muestra a la izquierda una lista de todos los modos cargados, unas pocas opciones de funcion bajo esa lista, y un editor de codigo amigable a la derecha de la pantalla. Al hacer click en uno de estos modos, cargamos este modo para su visualizacion y/o edicion.</p>
+        <p>Esta es la pagina de inicio de la <em>consola web del ETC</em>. La barra de navegaci&oacute;n simple en la primera l&iacute;nea nos ofrece dos p&aacute;ginas: <code>Editor</code> y <code>Screen Grabs</code> (capturas de pantalla). Estamos por defecto en la p&aacute;gina <em>Editor</em>, que muestra a la izquierda una lista de todos los modos cargados, unas pocas opciones de funci&oacute;n bajo esa lista, y un editor de c&oacute;digo amigable a la derecha de la pantalla. Al hacer click en uno de estos modos, cargamos este modo para su visualizaci&oacute;n y/o edici&oacute;n.</p>
 
         <figure><img style="max-width:100%" src="./ETC Manual_files/2 - Web panel edit.png"></figure>
 
-        <p>El lado derecho de la ventana es un editor de codigo, con numeros de linea y coloreado/resaltado de sintaxis. Puedes editar como lo harias con cualquier editor basico de texto. Despues de hacer cambios, necesitamos las funciones en la lista bajo los modos. Hay tres funciones disponibles:</p>
+        <p>El lado derecho de la ventana es un editor de c&oacute;digo, con n&uacute;meros de l&iacute;nea y coloreado/resaltado de sintaxis. Puedes editar como lo har&iacute;as con cualquier editor b&aacute;sico de texto. Despu&eacute;s de hacer cambios, necesitamos las funciones en la lista bajo los modos. Hay tres funciones disponibles:</p>
 
         <ul>
-          <li><code>reload</code> (refrescar) refresca la lista de modos disponibles. No necesitaras esta muy seguido.</li>
-          <li><code>save</code> (grabar) graba el archivo que estas editando en la memoria USB, incluyendo cualquier cambio que hayas hecho.</li>
-          <li><code>save new</code> (grabar nuevo) crea un nuevo modo como una copia del modo cargado actualmente en el editor de codigo. Despues de hacer click en <code>save new</code>, aparece una caja de dialogo que te pregunta el nombre del nuevo modo antes de que se cree la nueva carpeta.</li>
+          <li><code>reload</code> (refrescar) refresca la lista de modos disponibles. No necesitar&aacute;s esta muy seguido.</li>
+          <li><code>save</code> (grabar) graba el archivo que est&aacute;s editando en la memoria USB, incluyendo cualquier cambio que hayas hecho.</li>
+          <li><code>save new</code> (grabar nuevo) crea un nuevo modo como una copia del modo cargado actualmente en el editor de c&oacute;digo. Despu&eacute;s de hacer click en <code>save new</code>, aparece una caja de di&aacute;logo que te pregunta el nombre del nuevo modo antes de que se cree la nueva carpeta.</li>
         </ul>
 
-        <p>Entonces, despues de alterar el script de modo en el editor de codigo, haz click en <code>save</code> para grabar estos cambios. Esto causara que el ETC vuelva a cargar el modo actual, mostrandote inmediatamente el resultado visual de tus cambios a traves de la salida HDMI.</p>
+        <p>Entonces, despu&eacute;s de alterar el script de modo en el editor de c&oacute;digo, haz click en <code>save</code> para grabar estos cambios. Esto causar&aacute; que el ETC vuelva a cargar el modo actual, mostr&aacute;ndote inmediatamente el resultado visual de tus cambios a trav&eacute;s de la salida HDMI.</p>
 
         <p>Al hacer click en el enlace <code>Screen Grabs</code> en la barra de navegaci&oacute;n superior, se carga la p&aacute;gina <em>Screen Grabs</em>.</p>
 
